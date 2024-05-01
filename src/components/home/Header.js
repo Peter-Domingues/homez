@@ -10,7 +10,7 @@ import React, { useEffect, useState } from "react";
 const Header = () => {
   const [navbar, setNavbar] = useState(false);
   const pathName = usePathname();
-  console.log(pathName);
+
   const changeBackground = () => {
     if (window.scrollY >= 10 || pathName !== "/") {
       setNavbar(true);

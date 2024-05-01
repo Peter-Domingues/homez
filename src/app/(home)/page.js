@@ -12,7 +12,7 @@ export const metadata = {
   title: "Anastasia Benedeti | Real Estate Associate",
 };
 
-const Home_V5 = () => {
+const Home = () => {
   return (
     <>
       <Header />
@@ -42,4 +42,4 @@ const Home_V5 = () => {
   );
 };
 
-export default Home_V5;
+export default Home;
