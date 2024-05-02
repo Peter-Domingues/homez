@@ -53,7 +53,7 @@ const About = () => {
       {/* End Breadcrumb Sections */}
 
       {/* Abut intro */}
-      <section className="pb-0 pt-0">
+      <section className="pb20 pt20">
         <div className="cta-banner3 bgc-green-dark mx-auto maxw1600 pt100 pt60-lg pb90 pb60-lg position-relative overflow-hidden mx20-lg">
           <div className="container">
             <div className="row">

@@ -3967,7 +3967,21 @@ li {
     height: 600px;
   }
 }
+
+.mobile {
+  display: none;
+}
+.pc {
+  display: block;
+}
+
 @media (max-width: 768px) {
+  .mobile {
+    display: block;
+  }
+  .pc {
+    display: none;
+  }
   .home-banner-style8 .home-style8 {
     height: 700px;
   }
@@ -6994,7 +7008,7 @@ textarea:focus {
   transform: rotate(45deg);
 }
 .menu-item:hover {
-  color: var(--dark-green)
+  color: var(--dark-green);
 }
 .switch-style1 input.form-check-input {
   background-color: rgba(235, 103, 83, 0.07);
