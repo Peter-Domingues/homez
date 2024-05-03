@@ -58,13 +58,8 @@ const Footer = () => {
             </div>
             <Copyright />
           </div>
-          {/* End .col-lg-5 */}
         </div>
-        {/* End .row */}
       </div>
-      {/* End .container */}
-
-      {/* End copyright */}
     </>
   );
 };

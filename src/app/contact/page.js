@@ -1,8 +1,9 @@
 import DefaultHeader from "@/components/common/DefaultHeader";
-import Footer from "@/components/common/default-footer";
+import Footer from "@/components/home/footer";
 import MobileMenu from "@/components/common/mobile-menu";
 import Form from "@/components/pages/contact/Form";
 import Image from "next/image";
+import Social from "@/components/home/footer/Social";
 
 export const metadata = {
   title: "Contact | Anastasia Benedeti",
@@ -47,7 +48,7 @@ const Contact = () => {
                     <label className="heading-color ff-heading fw600 mb10">
                       Follow Us
                     </label>
-                    <p>90 Sw 3rd st, office #3, Miami FL Miami, FL 33130</p>
+                    <Social />
                   </div>
                   <div className="col-lg-6 hide-mobile">
                     <Image

@@ -1,5 +1,4 @@
 import Wrapper from "./layout-wrapper/wrapper";
-
 import Footer from "@/components/home/footer";
 import MobileMenu from "@/components/common/mobile-menu";
 import Header from "@/components/home/Header";
@@ -9,6 +8,7 @@ import Cta from "@/components/home/Cta";
 import Featured from "@/components/featured";
 import Sold from "@/components/sold";
 import New from "@/components/new";
+import Divider from "@/components/common/Divider";
 
 export const metadata = {
   title: "Anastasia Benedeti | Real Estate Associate",
@@ -24,7 +24,7 @@ export default function MainRoot() {
           <Hero />
         </section>
       </div>
-      <section className="pt-0 pb110 bgc-f7 pb50-md">
+      <section className="pt-0 pb110 bgc-green-light pb50-md">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -34,7 +34,9 @@ export default function MainRoot() {
         </div>
       </section>
       <Featured />
+      <Divider />
       <New />
+      <Divider />
       <Sold />
       <Cta />
       <section className="footer-style1 pt-0 pb-0">

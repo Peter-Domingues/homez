@@ -4,11 +4,10 @@ import React from "react";
 const Cta = () => {
   return (
     <section className="cta-banner4 d-flex align-items-center">
-      <div className="container">
+      <div className="container" style={{ zIndex: 9 }}>
         <div className="row">
           <div className="col-xl-10 mx-auto" data-aos="fade-in">
             <div className="cta-style4 position-relative text-center">
-              <h6 className="sub-title fw400 text-white">BUY OR SELL</h6>
               <h1 className="cta-title mb30 text-white">
                 Looking to Buy a new property or sell an existing one? Realton
                 provides an awesome solution!

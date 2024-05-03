@@ -1,6 +1,6 @@
 import DefaultHeader from "@/components/common/DefaultHeader";
-import Footer from "@/components/common/default-footer";
 import MobileMenu from "@/components/common/mobile-menu";
+import Footer from "@/components/home/footer";
 import Image from "next/image";
 
 export const metadata = {
