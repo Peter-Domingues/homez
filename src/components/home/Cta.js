@@ -9,7 +9,7 @@ const Cta = () => {
           <div className="col-xl-10 mx-auto" data-aos="fade-in">
             <div className="cta-style4 position-relative text-center">
               <h1 className="cta-title mb30 text-white">
-                I'm here to guide you to your Real Estate needs.
+                I&apos;m here to guide you to your Real Estate needs.
               </h1>
             </div>
           </div>

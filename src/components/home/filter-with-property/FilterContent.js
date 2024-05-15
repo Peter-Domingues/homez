@@ -90,7 +90,6 @@ const FilterContent = () => {
                         <input
                           className="form-control bgc-f7 bdrs12 ps-0"
                           type="text"
-                          className="form-control"
                           placeholder="RT04949213"
                           onChange={(e) =>
                             dispatch(changePropertyId(e.target.value))
