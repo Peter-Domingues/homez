@@ -1,6 +1,42 @@
+"use client";
+import { fetchInfo } from "@/api/properties";
 import FeaturedListings from "@/components/home/FeatuerdListings";
+import { useCallback, useEffect, useState } from "react";
 
 const Featured = () => {
+  const [properties, setProperties] = useState();
+  const [loading, setLoading] = useState(false);
+
+  const getProperties = useCallback(async () => {
+    setLoading(true);
+
+    const filterProps = [
+      { type: "PropertySubType", props: "SingleFamilyResidence" },
+      { type: "City", props: "Miami" },
+      { type: "ListPrice", props: { min: 1000000, max: 8000001 } },
+    ];
+
+    await fetchInfo(0, filterProps, "sale")
+      .then((response) => {
+        let propertiesList = [];
+
+        response.value.forEach((item) => {
+          if (item.Media) {
+            propertiesList.push(item);
+          }
+        });
+
+        setProperties(propertiesList);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
+
+  useEffect(() => {
+    getProperties();
+  }, []);
+
   return (
     <>
       <section className="pb90 pb30-md mt40" id="featured">
@@ -15,7 +51,7 @@ const Featured = () => {
           {/* End .row */}
 
           <div className="row" data-aos="fade-up" data-aos-delay="300">
-            <FeaturedListings />
+            <FeaturedListings properties={properties} />
           </div>
           {/* End .row */}
         </div>

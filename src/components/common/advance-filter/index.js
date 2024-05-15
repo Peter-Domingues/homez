@@ -1,31 +1,29 @@
 "use client";
 import Select from "react-select";
-import PriceRange from "./PriceRange";
-import Bedroom from "./Bedroom";
-import Bathroom from "./Bathroom";
-import Amenities from "./Amenities";
+import PriceRange from "../../listing/sidebar/PriceRange";
+import Bedroom from "../../listing/sidebar/Bedroom";
+import Bathroom from "../../listing/sidebar/Bathroom";
 import { useRouter } from "next/navigation";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  changeBathroms,
+  changeBedrooms,
+  changeFiltersSelected,
+  changePriceRange,
+  changePropertyId,
+  changeSquirefeet,
+} from "@/store/reducers/filterReducer";
+import SquareFeet from "@/components/listing/sidebar/SquareFeet";
 
 const AdvanceFilterModal = () => {
+  const dispatch = useDispatch();
+  const filters = useSelector((state) => state.filter);
   const router = useRouter();
   const catOptions = [
-    { value: "Banking", label: "Apartments" },
-    { value: "Bungalow", label: "Bungalow" },
-    { value: "Houses", label: "Houses" },
-    { value: "Loft", label: "Loft" },
-    { value: "Office", label: "Office" },
-    { value: "Townhome", label: "Townhome" },
-    { value: "Villa", label: "Villa" },
-  ];
-  const locationOptions = [
-    { value: "All Cities", label: "All Cities" },
-    { value: "California", label: "California" },
-    { value: "Los Angeles", label: "Los Angeles" },
-    { value: "New Jersey", label: "New Jersey" },
-    { value: "New York", label: "New York" },
-    { value: "San Diego", label: "San Diego" },
-    { value: "San Francisco", label: "San Francisco" },
-    { value: "Texas", label: "Texas" },
+    { value: "Condominium", label: "Apartment" },
+    { value: "Townhouse", label: "Townhouse" },
+    { value: "SingleFamilyResidence", label: "House" },
+    { value: "Commercial", label: "Commercial" },
   ];
 
   const customStyles = {
@@ -41,6 +39,61 @@ const AdvanceFilterModal = () => {
           : undefined,
       };
     },
+  };
+
+  const addOrRemoveFilters = (type, value) => {
+    if (value === "") {
+      const newFilters = filters.filtersSelected.filter((e) => e.type !== type);
+      return dispatch(changeFiltersSelected(newFilters));
+    }
+
+    if (!filters.filtersSelected.some((e) => e.type === type)) {
+      dispatch(
+        changeFiltersSelected([
+          ...filters.filtersSelected,
+          { type, props: value },
+        ])
+      );
+    } else {
+      const newFilters = filters.filtersSelected.filter((e) => e.type !== type);
+      dispatch(changeFiltersSelected([...newFilters, { type, props: value }]));
+    }
+    return;
+  };
+
+  const handlepriceRange = (elm) => {
+    addOrRemoveFilters("ListPrice", elm);
+    dispatch(changePriceRange(elm));
+  };
+
+  const handlebedrooms = (elm) => {
+    addOrRemoveFilters("BedroomsTotal", elm);
+    dispatch(changeBedrooms(elm));
+  };
+
+  const handlebathroms = (elm) => {
+    addOrRemoveFilters("BathroomsTotalInteger", elm);
+    dispatch(changeBathroms(elm));
+  };
+  const handlePropertyId = (elm) => {
+    dispatch(changePropertyId(elm.target.value));
+  };
+
+  const handlesquirefeet = (elm) => {
+    const parseLivingArea = { min: elm[0], max: elm[1] };
+    addOrRemoveFilters("LivingArea", parseLivingArea);
+    dispatch(changeSquirefeet(parseLivingArea));
+  };
+
+  const filterFunctions = {
+    handlebedrooms,
+    handlepriceRange,
+    handlebathroms,
+    handlesquirefeet,
+    bathroms: filters.bathroms,
+    bedrooms: filters.bedrooms,
+    priceRange: filters.priceRange,
+    squirefeet: filters.squirefeet,
   };
 
   return (
@@ -65,7 +118,7 @@ const AdvanceFilterModal = () => {
               <div className="widget-wrapper">
                 <h6 className="list-title mb20">Price Range</h6>
                 <div className="range-slider-style modal-version">
-                  <PriceRange />
+                  <PriceRange filterFunctions={filterFunctions} />
                 </div>
               </div>
             </div>
@@ -99,6 +152,7 @@ const AdvanceFilterModal = () => {
                     type="text"
                     className="form-control"
                     placeholder="RT04949213"
+                    onChange={handlePropertyId}
                   />
                 </div>
               </div>
@@ -112,7 +166,7 @@ const AdvanceFilterModal = () => {
               <div className="widget-wrapper">
                 <h6 className="list-title">Bedrooms</h6>
                 <div className="d-flex">
-                  <Bedroom />
+                  <Bedroom filterFunctions={filterFunctions} />
                 </div>
               </div>
             </div>
@@ -122,7 +176,7 @@ const AdvanceFilterModal = () => {
               <div className="widget-wrapper">
                 <h6 className="list-title">Bathrooms</h6>
                 <div className="d-flex">
-                  <Bathroom />
+                  <Bathroom filterFunctions={filterFunctions} />
                 </div>
               </div>
             </div>
@@ -131,7 +185,7 @@ const AdvanceFilterModal = () => {
           {/* End .row */}
 
           <div className="row">
-            <div className="col-sm-6">
+            {/* <div className="col-sm-6">
               <div className="widget-wrapper">
                 <h6 className="list-title">Location</h6>
                 <div className="form-style2 input-group">
@@ -146,45 +200,19 @@ const AdvanceFilterModal = () => {
                   />
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* End .col-md-6 */}
 
             <div className="col-sm-6">
               <div className="widget-wrapper">
                 <h6 className="list-title">Square Feet</h6>
-                <div className="space-area">
-                  <div className="d-flex align-items-center justify-content-between">
-                    <div className="form-style1">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Min."
-                      />
-                    </div>
-                    <span className="dark-color">-</span>
-                    <div className="form-style1">
-                      <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Max"
-                      />
-                    </div>
-                  </div>
-                </div>
+
+                <SquareFeet filterFunctions={filterFunctions} />
               </div>
             </div>
             {/* End .col-md-6 */}
           </div>
           {/* End .row */}
-
-          <div className="row">
-            <div className="col-lg-12">
-              <div className="widget-wrapper mb0">
-                <h6 className="list-title mb10">Amenities</h6>
-              </div>
-            </div>
-            <Amenities />
-          </div>
         </div>
         {/* End modal body */}
 
@@ -198,7 +226,7 @@ const AdvanceFilterModal = () => {
               data-bs-dismiss="modal"
               type="submit"
               className="ud-btn btn-thm"
-              onClick={() => router.push("/map-v1")}
+              onClick={() => router.push("/listing")}
             >
               <span className="flaticon-search align-text-top pr10" />
               Search

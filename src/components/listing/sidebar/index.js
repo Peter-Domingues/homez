@@ -1,26 +1,17 @@
-'use client'
+"use client";
 
 import React from "react";
-import SearchBox from "./SearchBox";
 import ListingStatus from "./ListingStatus";
 import PropertyType from "./PropertyType";
 import PriceSlider from "./PriceRange";
 import Bedroom from "./Bedroom";
 import Bathroom from "./Bathroom";
-import Location from "./Location";
 import SquareFeet from "./SquareFeet";
 import YearBuilt from "./YearBuilt";
-import OtherFeatures from "./OtherFeatures";
 
-const ListingSidebar = ({filterFunctions}) => {
+const ListingSidebar = ({ filterFunctions, handleSearch }) => {
   return (
     <div className="list-sidebar-style1">
-      <div className="widget-wrapper">
-        <h6 className="list-title">Find your home</h6>
-        <SearchBox filterFunctions={filterFunctions} />
-      </div>
-      {/* End .widget-wrapper */}
-
       <div className="widget-wrapper">
         <h6 className="list-title">Listing Status</h6>
         <div className="radio-element">
@@ -35,7 +26,7 @@ const ListingSidebar = ({filterFunctions}) => {
           <PropertyType filterFunctions={filterFunctions} />
         </div>
       </div>
-      
+
       {/* End .widget-wrapper */}
 
       <div className="widget-wrapper">
@@ -58,32 +49,24 @@ const ListingSidebar = ({filterFunctions}) => {
       <div className="widget-wrapper">
         <h6 className="list-title">Bathrooms</h6>
         <div className="d-flex">
-          <Bathroom filterFunctions={filterFunctions}  />
-        </div>
-      </div>
-      {/* End .widget-wrapper */}
-
-      <div className="widget-wrapper advance-feature-modal">
-        <h6 className="list-title">Location</h6>
-        <div className="form-style2 input-group">
-          <Location filterFunctions={filterFunctions} />
+          <Bathroom filterFunctions={filterFunctions} />
         </div>
       </div>
       {/* End .widget-wrapper */}
 
       <div className="widget-wrapper">
         <h6 className="list-title">Square Feet</h6>
-        <SquareFeet filterFunctions={filterFunctions}/>
+        <SquareFeet filterFunctions={filterFunctions} />
       </div>
       {/* End .widget-wrapper */}
 
       <div className="widget-wrapper">
         <h6 className="list-title">Year Built</h6>
-        <YearBuilt filterFunctions={filterFunctions}/>
+        <YearBuilt filterFunctions={filterFunctions} />
       </div>
       {/* End .widget-wrapper */}
 
-      <div className="widget-wrapper">
+      {/* <div className="widget-wrapper">
         <div className="feature-accordion">
           <div className="accordion" id="accordionExample">
             <div className="accordion-item border-none">
@@ -112,12 +95,12 @@ const ListingSidebar = ({filterFunctions}) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       {/* End .widget-wrapper */}
 
       <div className="widget-wrapper mb20">
         <div className="btn-area d-grid align-items-center">
-          <button className="ud-btn btn-thm">
+          <button onClick={handleSearch} className="ud-btn btn-thm">
             <span className="flaticon-search align-text-top pr10" />
             Search
           </button>
@@ -126,14 +109,14 @@ const ListingSidebar = ({filterFunctions}) => {
       {/* End .widget-wrapper */}
 
       <div className="reset-area d-flex align-items-center justify-content-between">
-        <div onClick={()=>filterFunctions.resetFilter()} className="reset-button cursor" href="#">
+        <div
+          onClick={() => filterFunctions.resetFilter()}
+          className="reset-button cursor"
+          href="#"
+        >
           <span className="flaticon-turn-back" />
           <u>Reset all filters</u>
         </div>
-        <a className="reset-button" href="#">
-          <span className="flaticon-favourite" />
-          <u>Save Search</u>
-        </a>
       </div>
     </div>
   );

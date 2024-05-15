@@ -1,49 +1,47 @@
+import { formattedPrice } from "@/helpers/priceHelper";
 import React from "react";
 
-const PropertyDetails = () => {
+const PropertyDetails = ({ data }) => {
   const columns = [
     [
       {
         label: "Property ID",
-        value: "RT48",
+        value: data.ListingKey,
       },
       {
         label: "Price",
-        value: "$252,000",
+        value: formattedPrice(data.ListPrice),
       },
       {
         label: "Property Size",
-        value: "1500 Sq Ft",
+        value: `${data.LotSizeSquareFeet} Sq Ft`,
       },
       {
         label: "Bathrooms",
-        value: "3",
+        value: data.BathroomsTotalInteger,
       },
       {
         label: "Bedrooms",
-        value: "2",
+        value: data.BedroomsTotal,
       },
     ],
     [
       {
         label: "Garage",
-        value: "2",
+        value: data.GarageSpaces,
       },
-      {
-        label: "Garage Size",
-        value: "200 SqFt",
-      },
+
       {
         label: "Year Built",
-        value: "2022",
+        value: data.YearBuilt,
       },
       {
         label: "Property Type",
-        value: "Apartment",
+        value: data.PropertyType,
       },
       {
         label: "Property Status",
-        value: "For Sale",
+        value: data?.PropertyType?.includes("Lease") ? "For rent" : "For sale",
       },
     ],
   ];

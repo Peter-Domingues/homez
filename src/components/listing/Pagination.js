@@ -1,14 +1,9 @@
 "use client";
 import React, { useState } from "react";
 
-const Pagination = () => {
-  const totalPages = 8; // Replace this with your actual total number of pages
-  const [currentPage, setCurrentPage] = useState(2); // Initialize the current page state to 2 (or any other default active page)
-
+const Pagination = ({ currentPage, setCurrentPage, totalPages }) => {
   const handlePageClick = (page) => {
     setCurrentPage(page);
-    // Here you can add additional logic to handle what happens when the user clicks on a page number.
-    // For example, you can fetch data corresponding to the selected page from the server or update the URL.
   };
 
   const generatePageNumbers = () => {
@@ -64,7 +59,7 @@ const Pagination = () => {
         </li>
       </ul>
       <p className="mt10 pagination_page_count text-center">
-        1-8 of 300+ property available
+        {currentPage} of {totalPages}
       </p>
     </div>
   );

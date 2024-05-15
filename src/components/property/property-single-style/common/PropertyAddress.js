@@ -1,22 +1,10 @@
 import React from "react";
 
-const PropertyAddress = () => {
+const PropertyAddress = ({ data }) => {
   const addresses = [
     {
-      address: "10425 Tabor St",
-      city: "Los Angeles",
-      state: "California",
-      zipCode: "90034",
-      area: "Brookside",
-      country: "United States",
-    },
-    {
-      address: "10 Downing Street",
-      city: "London",
-      state: "Greater London",
-      zipCode: "SW1A 2AA",
-      area: "Westminster",
-      country: "United Kingdom",
+      address: data.UnparsedAddress,
+      city: data.City,
     },
   ];
 
@@ -29,14 +17,12 @@ const PropertyAddress = () => {
         >
           <div className="d-flex justify-content-between">
             <div className="pd-list">
-              <p className="fw600 mb10 ff-heading dark-color">Address</p>
-              <p className="fw600 mb10 ff-heading dark-color">City</p>
-              <p className="fw600 mb-0 ff-heading dark-color">State/county</p>
-            </div>
-            <div className="pd-list">
-              <p className="text mb10">{address.address}</p>
-              <p className="text mb10">{address.city}</p>
-              <p className="text mb-0">{address.state}</p>
+              <p className="fw600 mb10 ff-heading dark-color">
+                Address: <span className="text mb10">{address.address}</span>
+              </p>
+              <p className="fw600 mb10 ff-heading dark-color">
+                City: <span className="text mb10">{address.city}</span>
+              </p>
             </div>
           </div>
         </div>

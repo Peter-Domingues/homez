@@ -5,8 +5,15 @@ import InputRange from "react-input-range";
 import "react-input-range/lib/css/index.css";
 import LookingFor from "./LookingFor";
 import Location from "./Location";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  changePriceRange,
+  changePropertyId,
+} from "@/store/reducers/filterReducer";
 
 const FilterContent = () => {
+  const dispatch = useDispatch();
+  const filters = useSelector((state) => state.filter);
   const router = useRouter();
   const [activeTab, setActiveTab] = useState("buy");
 
@@ -17,14 +24,24 @@ const FilterContent = () => {
   const tabs = [
     { id: "buy", label: "Buy" },
     { id: "rent", label: "Rent" },
-    { id: "sold", label: "Sold" },
   ];
 
-  const [price, setPrice] = useState({ value: { min: 2000, max: 45000 } });
+  const [price, setPrice] = useState({ value: { min: 500000, max: 8000000 } });
 
-  // price range handler
   const handleOnChange = (value) => {
     setPrice({ value });
+    dispatch(
+      changePriceRange({
+        min: value.min || price.min,
+        max: value.max || price.max,
+      })
+    );
+  };
+
+  const handleSearch = () => {
+    if (filters.propertyId)
+      return router.push(`/property-details/${filters.propertyId}`);
+    return router.push("/listing");
   };
 
   return (
@@ -50,7 +67,7 @@ const FilterContent = () => {
           >
             <div className="advance-content-style3 at-home5">
               <div className="row align-items-center">
-                <div className="col-md-4 col-xl-3 bdrr1 bdrrn-sm">
+                {/* <div className="col-md-4 col-xl-3 bdrr1 bdrrn-sm">
                   <label>Search</label>
                   <div className="advance-search-field position-relative">
                     <form className="form-search position-relative">
@@ -64,7 +81,26 @@ const FilterContent = () => {
                       </div>
                     </form>
                   </div>
+                </div> */}
+                <div className="col-md-4 col-xl-3 bdrr1 bdrrn-sm">
+                  <label>Property ID</label>
+                  <div className="advance-search-field position-relative">
+                    <form className="form-search position-relative">
+                      <div className="box-search">
+                        <input
+                          className="form-control bgc-f7 bdrs12 ps-0"
+                          type="text"
+                          className="form-control"
+                          placeholder="RT04949213"
+                          onChange={(e) =>
+                            dispatch(changePropertyId(e.target.value))
+                          }
+                        />
+                      </div>
+                    </form>
+                  </div>
                 </div>
+
                 {/* End .col-3 */}
 
                 <div className="col-md-4 col-xl-2 bdrr1 bdrrn-sm px20 pl15-sm">
@@ -77,14 +113,14 @@ const FilterContent = () => {
                 </div>
                 {/* End col-md-4 */}
 
-                <div className="col-md-4 col-xl-2 bdrr1 bdrrn-sm px20 pl15-sm">
+                {/* <div className="col-md-4 col-xl-2 bdrr1 bdrrn-sm px20 pl15-sm">
                   <div className="mt-3 mt-md-0">
                     <div className="bootselect-multiselect">
                       <label className="fz14">Location</label>
                       <Location />
                     </div>
                   </div>
-                </div>
+                </div> */}
                 {/* End col-md-4 */}
 
                 <div className="col-md-4 col-xl-2 bdrr1 bdrrn-sm px20 pl15-sm">
@@ -105,8 +141,8 @@ const FilterContent = () => {
                           <div className="range-wrapper at-home10">
                             <InputRange
                               formatLabel={() => ``}
-                              maxValue={100000}
-                              minValue={0}
+                              maxValue={8000000}
+                              minValue={500000}
                               value={price.value}
                               onChange={(value) => handleOnChange(value)}
                               id="slider"
@@ -141,7 +177,7 @@ const FilterContent = () => {
                     <button
                       className="advance-search-icon ud-btn btn-thm ms-4"
                       type="button"
-                      onClick={() => router.push("/grid-full-3-col")}
+                      onClick={handleSearch}
                     >
                       <span className="flaticon-search" />
                     </button>

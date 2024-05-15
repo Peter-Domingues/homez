@@ -1,14 +1,15 @@
 "use client";
+import { changePropertyTypes } from "@/store/reducers/filterReducer";
+import { useDispatch } from "react-redux";
 import Select from "react-select";
 
 const LookingFor = () => {
+  const dispatch = useDispatch();
   const inqueryType = [
-    { value: "Apartments", label: "Apartments" },
-    { value: "Bungalow", label: "Bungalow" },
-    { value: "Houses", label: "Houses" },
-    { value: "Office", label: "Office" },
-    { value: "TownHome", label: "TownHome" },
-    { value: "Villa", label: "Villa" },
+    { value: "Condominium", label: "Apartment" },
+    { value: "Townhouse", label: "Townhouse" },
+    { value: "SingleFamilyResidence", label: "House" },
+    { value: "Commercial", label: "Commercial" },
   ];
 
   const customStyles = {
@@ -36,6 +37,7 @@ const LookingFor = () => {
         name="colors"
         options={inqueryType}
         styles={customStyles}
+        onChange={(e) => dispatch(changePropertyTypes([e.value]))}
         className="text-start select-borderless"
         classNamePrefix="select"
         required

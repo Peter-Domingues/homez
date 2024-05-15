@@ -15,7 +15,8 @@ const ContactMeta = () => {
   ];
 
   return (
-    <div className="row mb-4 mb-lg-5" style={{ justifyContent: "center" }}>
+    <div className="column mb-4 mb-lg-5" style={{ width: "30%" }}>
+      <h6 className="text-white mb20">Contact</h6>
       {contactInfoList.map((contact, index) => (
         <div className="col-auto" key={index}>
           <div className="contact-info">

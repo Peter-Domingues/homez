@@ -1,7 +1,16 @@
 import AdvanceFilterModal from "@/components/common/advance-filter";
+import { clearFilters } from "@/store/reducers/filterReducer";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import FilterContent from "./FilterContent";
 
 const Hero = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(clearFilters());
+  }, []);
+
   return (
     <>
       <div className="inner-banner-style1 text-center">

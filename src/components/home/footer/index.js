@@ -3,6 +3,7 @@ import Link from "next/link";
 import ContactMeta from "./ContactMeta";
 import Social from "./Social";
 import Copyright from "./Copyright";
+import MenuWidget from "./MenuWidget";
 
 const Footer = () => {
   return (
@@ -47,11 +48,12 @@ const Footer = () => {
             }}
           >
             <div
-              className="footer-widget mb-4 mb-lg-5"
-              style={{ textAlign: "center" }}
+              className="row footer-widget mb-4 mb-lg-5"
+              style={{ justifyContent: "center" }}
             >
               <ContactMeta />
-              <div className="social-widget">
+              <MenuWidget />
+              <div className="social-widget" style={{ width: "30%" }}>
                 <h6 className="text-white mb20">Follow us on social media</h6>
                 <Social />
               </div>

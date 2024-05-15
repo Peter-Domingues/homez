@@ -9,8 +9,7 @@ const Cta = () => {
           <div className="col-xl-10 mx-auto" data-aos="fade-in">
             <div className="cta-style4 position-relative text-center">
               <h1 className="cta-title mb30 text-white">
-                Looking to Buy a new property or sell an existing one? Realton
-                provides an awesome solution!
+                I'm here to guide you to your Real Estate needs.
               </h1>
             </div>
           </div>

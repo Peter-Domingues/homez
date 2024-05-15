@@ -1,37 +1,12 @@
-import DefaultHeader from "@/components/common/DefaultHeader";
-import Footer from "@/components/common/default-footer";
-import MobileMenu from "@/components/common/mobile-menu";
-
-import PropertyFilteringBanner from "@/components/listing/grid-view/banner-search-v1/PropertyFilteringBanner";
-
 import React from "react";
+import AdvancedSearch from "@/components/advancedSearch";
 
 export const metadata = {
   title: "Listing | Anastasia Benedeti",
 };
 
 const BannerSearchV1 = () => {
-  return (
-    <>
-      {/* Main Header Nav */}
-      <DefaultHeader />
-      {/* End Main Header Nav */}
-
-      {/* Mobile Nav  */}
-      <MobileMenu />
-      {/* End Mobile Nav  */}
-
-      {/* Home Banner Style V1 */}
-      <PropertyFilteringBanner />
-      {/* Property Filtering */}
-
-      {/* Start Our Footer */}
-      <section className="footer-style1 pt-0 pb-0">
-        <Footer />
-      </section>
-      {/* End Our Footer */}
-    </>
-  );
+  return <AdvancedSearch />;
 };
 
 export default BannerSearchV1;

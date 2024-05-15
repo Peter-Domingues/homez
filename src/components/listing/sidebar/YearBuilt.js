@@ -8,7 +8,7 @@ const YearBuilt = ({ filterFunctions }) => {
           <input
             type="number"
             onChange={(e) =>
-              filterFunctions?.handleyearBuild(
+              filterFunctions?.handleyearBuilt(
                 [
                   e.target.value || 1800,
                   document.getElementById("maxFeet2").value / 1,
@@ -25,7 +25,7 @@ const YearBuilt = ({ filterFunctions }) => {
           <input
             type="number"
             onChange={(e) =>
-              filterFunctions?.handleyearBuild([
+              filterFunctions?.handleyearBuilt([
                 document.getElementById("minFeet2").value / 1 || 1800,
                 e.target.value || 2050,
               ])

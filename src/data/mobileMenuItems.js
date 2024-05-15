@@ -5,11 +5,11 @@ module.exports = [
   },
   {
     label: "FEATURED PROPERTIES",
-    path: "/featured",
+    path: "/#featured",
   },
   {
     label: "NEW & PRE-CONSTRUCTION",
-    path: "/new",
+    path: "/#new",
   },
   {
     label: "ADVANCED SEARCH",
@@ -17,7 +17,7 @@ module.exports = [
   },
   {
     label: "SOLD",
-    path: "/sold",
+    path: "/#sold",
   },
   {
     label: "ABOUT US",

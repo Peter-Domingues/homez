@@ -1,12 +1,12 @@
 "use client";
-import listings from "@/data/listings";
+import { formattedPrice } from "@/helpers/priceHelper";
 import Image from "next/image";
 import Link from "next/link";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 
-const FeaturedListings = () => {
+const FeaturedListings = ({ properties }) => {
   return (
     <>
       <Swiper
@@ -36,16 +36,16 @@ const FeaturedListings = () => {
           },
         }}
       >
-        {listings?.slice(0, 4).map((listing) => (
+        {properties?.slice(0, 4).map((listing) => (
           <SwiperSlide key={listing?.id}>
             <div className="item">
               <div className="listing-style7 mb60">
-                <div className="list-thumb">
+                <div className="list-thumb featured-image-height">
                   <Image
                     width={382}
                     height={248}
                     className="w-100 h-100 cover"
-                    src={listing?.image}
+                    src={listing?.Media[0].Thumbnail}
                     alt="listings"
                   />
                   <div className="sale-sticker-wrap">
@@ -79,17 +79,20 @@ const FeaturedListings = () => {
 
                   <div className="d-flex justify-content-between align-items-center">
                     <div className="list-price">
-                      {listing?.price} / <span>mo</span>
+                      ${formattedPrice(listing?.ListPrice)}
                     </div>
                     <div className="list-meta2 d-flex align-items-center">
                       <a href="#" className="mr10">
-                        <span className="flaticon-bed mr5" /> {listing?.bed}
+                        <span className="flaticon-bed mr5" />{" "}
+                        {listing?.BedroomsTotal}
                       </a>
                       <a href="#" className="mr10">
-                        <span className="flaticon-shower mr5" /> {listing?.bath}
+                        <span className="flaticon-shower mr5" />{" "}
+                        {listing?.BathroomsTotalInteger}
                       </a>
                       <a href="#">
-                        <span className="flaticon-expand" /> {listing?.sqft}
+                        <span className="flaticon-expand" />{" "}
+                        {listing?.BuildingAreaTotal}
                       </a>
                     </div>
                   </div>

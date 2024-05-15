@@ -78,6 +78,7 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
   --divder-space: 200px;
   --headings-color: #181a20;
   --dark-green: #134852;
+  --medium-green: #185c69;
   --light-green: #1f6569;
 }
 
@@ -226,10 +227,11 @@ li {
   font-family: "Safira March";
   font-size: large;
   line-height: 2.5;
+  letter-spacing: 4px;
 }
 /* All Type Of Footer Styles */
 .footer-style1 {
-  background-color: var(--light-green);
+  background-color: var(--medium-green);
 }
 .footer-style1.at-home2 {
   padding-top: 230px;
@@ -5464,7 +5466,20 @@ section {
   background-color: #1f6769;
   color: #ffffff;
 }
+.new-property {
+  width: 50%;
+}
+.max-height-new {
+  max-height: 256px;
+}
+.new-image {
+  height: 256px;
+}
 
+.featured-image-height {
+  height: 200px;
+  max-height: 200px;
+}
 .feature-style1 {
   border-radius: 12px;
   overflow: hidden;
@@ -7931,6 +7946,9 @@ li.mm-listitem:focus {
   width: 470px;
 }
 @media (max-width: 767.98px) {
+  .new-property {
+    width: 100%;
+  }
   .advance-search-list li .search-field {
     margin-bottom: 15px;
     width: auto;
@@ -8708,7 +8726,7 @@ input:focus-visible {
 }
 .social-style1 i:hover {
   background-color: rgba(255, 255, 255, 0.05);
-  color: #ffffff;
+  color: #1f4b3f;
 }
 .social-style1.light-style i {
   color: var(--headings-color);

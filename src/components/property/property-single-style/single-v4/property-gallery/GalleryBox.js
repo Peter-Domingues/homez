@@ -5,15 +5,7 @@ import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 
-const GalleryBox = ({id}) => {
-  const data = listings.filter((elm) => elm.id == id)[0] || listings[0];
-  const imageUrls = [
-    "/images/listings/listing-single-slide1.jpg",
-    "/images/listings/listing-single-slide2.jpg",
-    
-    "/images/listings/listing-single-slide3.jpg",
-  ];
-
+const GalleryBox = ({ images }) => {
   return (
     <>
       <Swiper
@@ -28,14 +20,14 @@ const GalleryBox = ({id}) => {
         initialSlide={1}
         loop={true}
       >
-        {imageUrls.map((imageUrl, index) => (
+        {images?.map((imageUrl, index) => (
           <SwiperSlide key={index}>
             <div className="item">
               <Image
                 width={1170}
                 height={600}
                 className="bdrs12 w-100 h-100 cover"
-                src={imageUrl}
+                src={imageUrl.Thumbnail}
                 alt={`Image ${index + 1}`}
               />
             </div>

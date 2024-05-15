@@ -27,11 +27,14 @@ const Contact = () => {
 
             <div className="col-lg-5 position-relative">
               <div
-                className="home8-contact-form default-box-shadow1 bdrs12 bdr1 p30 mb30-md bgc-white"
+                className="home8-contact-form default-box-shadow1 bdrs12 bdr1 mb30-md bgc-white"
                 style={{ minHeight: "100%" }}
               >
                 <div className="row">
-                  <div className="col-lg-6">
+                  <div
+                    className="col-lg-6 p30"
+                    style={{ lineBreak: "anywhere" }}
+                  >
                     <h4 className="form-title mb25">Contact us</h4>
                     <label className="heading-color ff-heading fw600 mb10">
                       Address

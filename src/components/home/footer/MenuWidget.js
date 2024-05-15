@@ -5,8 +5,10 @@ const MenuWidget = () => {
     {
       title: "Quick Links",
       links: [
-        { label: "Contact Support", href: "#" },
-        { label: "FAQs", href: "#" },
+        { label: "Featured Properties", href: "#featured" },
+        { label: "New & Pre-construction", href: "#new" },
+        { label: "Advanced Serch", href: "/listing" },
+        { label: "About us", href: "/about" },
       ],
     },
   ];
