@@ -17,7 +17,7 @@ const CuratorWidget = () => {
   return (
     <div className="pt90 pt30-md align-text">
       <h2 className="title title-font">FOLLOW AB</h2>
-      <div id="curator-feed-default-feed-layout" className="pt30" />
+      <div id="curator-feed-default-feed-layout" className="pt30 feed-insta" />
     </div>
   );
 };

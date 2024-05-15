@@ -762,8 +762,12 @@ li {
 }
 
 .footer-column {
-  width: 30%
+  width: 30%;
 }
+.feed-insta {
+  width: 80%;
+}
+
 @media (max-width: 991.98px) {
   .dashboard__main {
     margin-top: 0px;
@@ -792,7 +796,10 @@ li {
     display: none;
   }
   .footer-column {
-    width: 100%
+    width: 100%;
+  }
+  .feed-insta {
+    width: 100%;
   }
 }
 @media (max-width: 1199.98px) {
