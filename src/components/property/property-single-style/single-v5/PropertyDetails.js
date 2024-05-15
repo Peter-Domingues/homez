@@ -1,47 +1,51 @@
-import { formattedPrice } from "@/helpers/priceHelper";
+import listings from "@/data/listings";
 import React from "react";
 
-const PropertyDetails = ({ data }) => {
+const PropertyDetails = ({id}) => {
+  const data = listings.filter((elm) => elm.id == id)[0] || listings[0];
   const columns = [
     [
       {
-        label: "MLS number",
-        value: data.ListingKey,
+        label: "Property ID",
+        value: "RT48",
       },
       {
         label: "Price",
-        value: formattedPrice(data.ListPrice),
+        value:data.price,
       },
       {
         label: "Property Size",
-        value: `${data.LotSizeSquareFeet} Sq Ft`,
+        value: `${data.sqft} Sq Ft`,
       },
       {
         label: "Bathrooms",
-        value: data.BathroomsTotalInteger,
+        value: data.bath,
       },
       {
         label: "Bedrooms",
-        value: data.BedroomsTotal,
+        value: data.bed,
       },
     ],
     [
       {
         label: "Garage",
-        value: data.GarageSpaces,
+        value: "2",
       },
-
+      {
+        label: "Garage Size",
+        value: "200 SqFt",
+      },
       {
         label: "Year Built",
-        value: data.YearBuilt,
+        value: data.yearBuilding,
       },
       {
         label: "Property Type",
-        value: data.PropertyType,
+        value: data.propertyType,
       },
       {
         label: "Property Status",
-        value: data?.PropertyType?.includes("Lease") ? "For rent" : "For sale",
+        value: `For ${data.forRent ? 'rent':'sale'}`,
       },
     ],
   ];
@@ -49,12 +53,7 @@ const PropertyDetails = ({ data }) => {
   return (
     <div className="row">
       {columns.map((column, columnIndex) => (
-        <div
-          key={columnIndex}
-          className={`col-md-6 col-xl-4${
-            columnIndex === 1 ? " offset-xl-2" : ""
-          }`}
-        >
+        <div key={columnIndex} className="col-md-6 col-xl-6">
           {column.map((detail, index) => (
             <div key={index} className="d-flex justify-content-between">
               <div className="pd-list">

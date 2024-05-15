@@ -4,9 +4,9 @@ import Image from "next/image";
 const SingleAgentInfo = () => {
   const agentData = {
     id: 1,
-    name: "Arlene McCoy",
-    phoneNumbers: ["(920) 012-3421", "(920) 012-4390"],
-    socialMedia: ["facebook", "twitter", "instagram", "linkedin"],
+    name: "Anastasia Benedeti",
+    phoneNumbers: ["+1 786 523 9723"],
+    socialMedia: ["instagram"],
   };
 
   return (
@@ -16,8 +16,9 @@ const SingleAgentInfo = () => {
           width={90}
           height={90}
           className="w90"
-          src="/images/team/agent-3.png"
+          src="/images/profilephoto.png"
           alt="agent"
+          style={{ borderRadius: "50px" }}
         />
       </div>
       <div className="single-contant ml30 ml0-xs">
@@ -37,7 +38,7 @@ const SingleAgentInfo = () => {
         <div className="agent-social">
           {agentData.socialMedia.map((social, index) => (
             <a key={index} className="mr20" href="#">
-              <i className={`fab fa-${social}`} />
+              <i className={`fab fa-${social}`} /> anastasiab.realestate
             </a>
           ))}
         </div>

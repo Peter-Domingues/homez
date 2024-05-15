@@ -80,6 +80,7 @@ Tag: advanced search, agency, agent, classified, directory, house, listing, prop
   --dark-green: #134852;
   --medium-green: #185c69;
   --light-green: #1f6569;
+  --pantone-green: #165662;
 }
 
 /* Mixins */
@@ -223,6 +224,18 @@ li {
   font-family: var(--title-font-family);
   font-weight: 600;
 }
+.crt-post-text {
+  max-height: 100px;
+}
+
+.crt-image {
+  height: 242px !important;
+}
+
+.align-text {
+  text-align: center;
+}
+
 .title-font {
   font-family: "Safira March";
   font-size: large;
@@ -234,6 +247,13 @@ li {
   text-align: center;
   font-size: x-large;
 }
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* All Type Of Footer Styles */
 .footer-style1 {
   background-color: var(--medium-green);
@@ -733,6 +753,17 @@ li {
   padding-left: 300px;
   width: 100%;
 }
+
+.footer-image-mobile {
+  display: none;
+}
+.footer-image {
+  display: block;
+}
+
+.footer-column {
+  width: 30%
+}
 @media (max-width: 991.98px) {
   .dashboard__main {
     margin-top: 0px;
@@ -750,6 +781,18 @@ li {
   }
   .title-font-size {
     font-size: large;
+  }
+  .new-property-3 {
+    width: 100% !important;
+  }
+  .footer-image-mobile {
+    display: block;
+  }
+  .footer-image {
+    display: none;
+  }
+  .footer-column {
+    width: 100%
   }
 }
 @media (max-width: 1199.98px) {
@@ -10286,7 +10329,7 @@ input:focus-visible {
   border-radius: 0px;
 }
 .bgc-green-light {
-  background-color: var(--light-green);
+  background-color: var(--pantone-green);
 }
 
 .bgc-thm3-light {

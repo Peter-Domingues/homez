@@ -83,7 +83,7 @@ const FilterContent = () => {
                   </div>
                 </div> */}
                 <div className="col-md-4 col-xl-3 bdrr1 bdrrn-sm">
-                  <label>Property ID</label>
+                  <label>MLS number</label>
                   <div className="advance-search-field position-relative">
                     <form className="form-search position-relative">
                       <div className="box-search">

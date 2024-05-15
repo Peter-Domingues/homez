@@ -41,7 +41,7 @@ const InfoWithForm = () => {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Ali Tufan"
+                  placeholder="Enter your name"
                 />
               </div>
             </div>
@@ -69,29 +69,8 @@ const InfoWithForm = () => {
                 <input
                   type="email"
                   className="form-control"
-                  placeholder="creativelayers088"
+                  placeholder="Enter your email"
                 />
-              </div>
-            </div>
-            {/* End .col */}
-
-            <div className="col-md-6">
-              <div className="widget-wrapper sideborder-dropdown">
-                <label className="heading-color ff-heading fw600 mb10">
-                  I&apos;m a
-                </label>
-                <div className="form-style2 input-group">
-                  <Select
-                    defaultValue={[inqueryType[0]]}
-                    name="colors"
-                    options={inqueryType}
-                    styles={customStyles}
-                    className="custom-react_select"
-                    classNamePrefix="select"
-                    required
-                    isClearable={false}
-                  />
-                </div>
               </div>
             </div>
             {/* End .col */}
@@ -104,26 +83,15 @@ const InfoWithForm = () => {
                 <textarea
                   cols={30}
                   rows={4}
-                  placeholder="Hello, I am interested in [Renovated apartment at last floor]"
+                  placeholder="Your message"
                   defaultValue={""}
                 />
               </div>
             </div>
             {/* End .col */}
 
-            <div className="checkbox-style1 d-block d-sm-flex align-items-center justify-content-between mb10">
-              <label className="custom_checkbox fz14 ff-heading">
-                By submitting this form I agree to Terms of Use
-                <input type="checkbox" />
-                <span className="checkmark" />
-              </label>
-            </div>
-            {/* End .col */}
-
             <div className="btn-area mt20">
-              <button className="ud-btn btn-white2">
-                Request Information <i className="fal fa-arrow-right-long" />
-              </button>
+              <button className="ud-btn btn-white2">Send</button>
             </div>
           </form>
         </div>

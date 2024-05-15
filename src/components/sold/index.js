@@ -3,13 +3,13 @@ import Image from "next/image";
 const Sold = () => {
   const soldMock = [
     {
-      Media: "/images/sold1.png",
+      Media: "/images/a.jpg",
     },
     {
-      Media: "/images/sold2.png",
+      Media: "/images/b.jpg",
     },
     {
-      Media: "/images/sold3.png",
+      Media: "/images/c.jpg",
     },
   ];
   return (

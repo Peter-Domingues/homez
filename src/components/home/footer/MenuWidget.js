@@ -14,7 +14,7 @@ const MenuWidget = () => {
   ];
 
   return (
-    <>
+    <div className="footer-column">
       {menuSections.map((section, index) => (
         <div className="col-auto" key={index}>
           <div className="link-style1 mb-3">
@@ -29,7 +29,7 @@ const MenuWidget = () => {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

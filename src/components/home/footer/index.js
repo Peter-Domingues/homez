@@ -20,13 +20,26 @@ const Footer = () => {
               }}
             ></div>
             <div
-              className="footer-widget mb-4 mt-4"
+              className="footer-widget mb-4 mt-4 footer-image"
               style={{ textAlign: "center" }}
             >
               <Link className="footer-logo" href="/">
                 <Image
                   width={390}
                   height={88}
+                  src="/images/nameLogo.png"
+                  alt=""
+                />
+              </Link>
+            </div>
+            <div
+              className="footer-widget mb-4 mt-4 footer-image-mobile"
+              style={{ textAlign: "center" }}
+            >
+              <Link className="footer-logo" href="/">
+                <Image
+                  width={300}
+                  height={68}
                   src="/images/nameLogo.png"
                   alt=""
                 />
@@ -53,7 +66,7 @@ const Footer = () => {
             >
               <ContactMeta />
               <MenuWidget />
-              <div className="social-widget" style={{ width: "30%" }}>
+              <div className="social-widget footer-column">
                 <h6 className="text-white mb20">Follow us on social media</h6>
                 <Social />
               </div>

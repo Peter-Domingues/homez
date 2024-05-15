@@ -145,7 +145,7 @@ const ComapareTable = () => {
 
         <tr>
           <th className="text-end" scope="row">
-            Property ID
+            MLS number
           </th>
           <td>R43</td>
           <td>R43</td>

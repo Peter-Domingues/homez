@@ -11,6 +11,7 @@ import New from "@/components/new";
 import Divider from "@/components/common/Divider";
 import { Provider } from "react-redux";
 import store from "@/store/reducers";
+import CuratorWidget from "../common/curatorWidget";
 
 export default function HomeComponent() {
   return (
@@ -37,6 +38,19 @@ export default function HomeComponent() {
       <Divider />
       <Sold />
       <Cta />
+      <CuratorWidget />
+      <div className="testimonials pb90 pb30-md pt90 p30-md">
+        <h2 className="title title-font ">TESTIMONIALS</h2>
+        <script
+          src="https://static.elfsight.com/platform/platform.js"
+          data-use-service-core
+          defer
+        ></script>
+        <div
+          class="elfsight-app-383394dc-1b9d-4627-87e3-092d80fffc67"
+          data-elfsight-app-lazy
+        ></div>
+      </div>
       <section className="footer-style1 pt-0 pb-0">
         <Footer />
       </section>
