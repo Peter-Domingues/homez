@@ -40,7 +40,7 @@ const Hero = () => {
     <>
       <div className="hero-large-home5">
         <Swiper
-          direction="vertical" // Set the direction to vertical
+          direction="horizontal" // Set the direction to vertical
           spaceBetween={0}
           slidesPerView={1}
           speed={1400} // Set the slide transition speed in milliseconds
@@ -72,22 +72,10 @@ const Hero = () => {
                       }}
                     >
                       <div className="col-lg-12 text-left position-relative">
-                        <h3
-                          className="h6 title-font text-white"
-                          style={{
-                            textAlign: "center",
-                            fontSize: "x-large",
-                          }}
-                        >
+                        <h3 className="h6 title-font text-white title-font-size">
                           WELCOME
                         </h3>
-                        <h3
-                          className="h6 title-font text-white"
-                          style={{
-                            textAlign: "center",
-                            fontSize: "x-large",
-                          }}
-                        >
+                        <h3 className="h6 title-font text-white title-font-size">
                           BUY
                           <span style={{ fontFamily: "OpenSans" }}> . </span>
                           SELL
@@ -141,16 +129,10 @@ const Hero = () => {
                         }}
                       >
                         <div className="col-lg-12 text-left position-relative">
-                          <h3
-                            className="h6 title-font text-white"
-                            style={{ textAlign: "center", fontSize: "x-large" }}
-                          >
+                          <h3 className="h6 title-font text-white title-font-size">
                             WELCOME
                           </h3>
-                          <h3
-                            className="h6 title-font text-white"
-                            style={{ textAlign: "center", fontSize: "x-large" }}
-                          >
+                          <h3 className="h6 title-font text-white title-font-size">
                             BUY
                             <span style={{ fontFamily: "OpenSans" }}> . </span>
                             SELL

@@ -229,6 +229,11 @@ li {
   line-height: 2.5;
   letter-spacing: 4px;
 }
+
+.title-font-size {
+  text-align: center;
+  font-size: x-large;
+}
 /* All Type Of Footer Styles */
 .footer-style1 {
   background-color: var(--medium-green);
@@ -742,6 +747,9 @@ li {
 @media (max-width: 767.98px) {
   .dashboard__content {
     padding: 40px 30px;
+  }
+  .title-font-size {
+    font-size: large;
   }
 }
 @media (max-width: 1199.98px) {
