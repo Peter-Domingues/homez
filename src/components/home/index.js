@@ -34,8 +34,8 @@ export default function HomeComponent() {
       </section>
       <Featured />
       <Divider />
-      <New />
-      <Divider />
+      {/* <New /> */}
+      {/* <Divider /> */}
       <Sold />
       <Cta />
       <CuratorWidget />
