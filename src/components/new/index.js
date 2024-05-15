@@ -13,6 +13,7 @@ const New = () => {
     const filterProps = [
       { type: "PropertySubType", props: "SingleFamilyResidence" },
       { type: "ListPrice", props: { min: 0, max: 1000001 } },
+      { type: "City", props: "Miami" },
     ];
 
     await fetchInfo(0, filterProps, "sale", "", "6")

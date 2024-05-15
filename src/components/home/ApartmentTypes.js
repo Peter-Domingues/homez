@@ -1,3 +1,4 @@
+import { formattedPrice } from "@/helpers/priceHelper";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -20,12 +21,16 @@ const ApartmentTypes = ({ data, loading }) => {
               </div>
               <div className="feature-content">
                 <div className="top-area">
-                  <h6 className="title mb-1">{apartment.city}</h6>
-                  <p className="text">{apartment.propertyCount} Properties</p>
+                  <h6 className="title mb-1">
+                    {formattedPrice(apartment.ListPrice)}
+                  </h6>
                 </div>
                 <div className="bottom-area">
-                  <Link className="ud-btn2" href="/map-v4">
-                    See All Cities
+                  <Link
+                    className="ud-btn2"
+                    href={`/property-details/${apartment.ListingKey}`}
+                  >
+                    See Details
                     <i className="fal fa-arrow-right-long" />
                   </Link>
                 </div>
