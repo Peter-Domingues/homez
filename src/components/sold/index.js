@@ -1,6 +1,20 @@
 import ApartmentTypes from "@/components/home/ApartmentTypes";
 
 const Sold = () => {
+  const soldMock = [
+    {
+      Media: [{ Thumbnail: "/images/listings/compare-1.jpg" }],
+      ListPrice: 2000000,
+    },
+    {
+      Media: [{ Thumbnail: "/images/listings/compare-1.jpg" }],
+      ListPrice: 1000000,
+    },
+    {
+      Media: [{ Thumbnail: "/images/listings/compare-1.jpg" }],
+      ListPrice: 3000000,
+    },
+  ];
   return (
     <section className="pb90 pb30-md" id="sold">
       <div className="container">
@@ -14,7 +28,7 @@ const Sold = () => {
         {/* End .row */}
 
         <div className="row" data-aos="fade-up" data-aos-delay="300">
-          <ApartmentTypes />
+          <ApartmentTypes data={soldMock} columns={3} />
         </div>
         {/* End .row */}
       </div>

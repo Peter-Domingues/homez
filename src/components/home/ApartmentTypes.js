@@ -3,12 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ApartmentTypes = ({ data, loading }) => {
+const ApartmentTypes = ({ data, loading, columns }) => {
   return (
     <>
       {!loading &&
         data?.map((apartment, index) => (
-          <div key={index} className="new-property">
+          <div
+            key={index}
+            className={columns === 3 ? "new-property-3" : "new-property"}
+          >
             <div className="feature-style1 mb30 max-height-new">
               <div className="feature-img new-image">
                 <Image
