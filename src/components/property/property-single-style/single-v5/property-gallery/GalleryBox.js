@@ -24,6 +24,7 @@ const GalleryBox = ({ images }) => {
               <Image
                 width={1519}
                 height={475}
+                style={{ maxHeight: "500px" }}
                 className=" w-100 h-100 cover"
                 src={imageUrl.Thumbnail}
                 alt={`Image ${index + 1}`}
