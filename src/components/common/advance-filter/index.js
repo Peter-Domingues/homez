@@ -8,12 +8,16 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   changeBathroms,
   changeBedrooms,
+  changeCity,
   changeFiltersSelected,
   changePriceRange,
   changePropertyId,
   changeSquirefeet,
+  changeZipCode,
 } from "@/store/reducers/filterReducer";
 import SquareFeet from "@/components/listing/sidebar/SquareFeet";
+import Location from "@/components/listing/sidebar/Location";
+import ZipCode from "@/components/listing/sidebar/ZipCode";
 
 const AdvanceFilterModal = () => {
   const dispatch = useDispatch();
@@ -85,7 +89,17 @@ const AdvanceFilterModal = () => {
     dispatch(changeSquirefeet(parseLivingArea));
   };
 
+  const handleZipCode = (elm) => {
+    addOrRemoveFilters("PostalCode", elm);
+    dispatch(changeZipCode(elm));
+  };
+  const handleCity = (elm) => {
+    addOrRemoveFilters("City", elm);
+    dispatch(changeCity(elm));
+  };
   const filterFunctions = {
+    handleZipCode,
+    handleCity,
     handlebedrooms,
     handlepriceRange,
     handlebathroms,
@@ -146,7 +160,7 @@ const AdvanceFilterModal = () => {
 
             <div className="col-sm-6">
               <div className="widget-wrapper">
-                <h6 className="list-title">MLS number</h6>
+                <h6 className="list-title">MLS #</h6>
                 <div className="form-style2">
                   <input
                     type="text"
@@ -185,22 +199,14 @@ const AdvanceFilterModal = () => {
           {/* End .row */}
 
           <div className="row">
-            {/* <div className="col-sm-6">
+            <div className="col-sm-6">
               <div className="widget-wrapper">
-                <h6 className="list-title">Location</h6>
+                <h6 className="list-title">Zip Code#</h6>
                 <div className="form-style2 input-group">
-                  <Select
-                    defaultValue={[locationOptions[0]]}
-                    name="colors"
-                    styles={customStyles}
-                    options={locationOptions}
-                    className="select-custom"
-                    classNamePrefix="select"
-                    required
-                  />
+                  <ZipCode filterFunctions={filterFunctions} />
                 </div>
               </div>
-            </div> */}
+            </div>
             {/* End .col-md-6 */}
 
             <div className="col-sm-6">
@@ -211,6 +217,16 @@ const AdvanceFilterModal = () => {
               </div>
             </div>
             {/* End .col-md-6 */}
+          </div>
+          <div className="row">
+            <div className="col-sm-6">
+              <div className="widget-wrapper">
+                <h6 className="list-title">City</h6>
+                <div className="form-style2 input-group">
+                  <Location filterFunctions={filterFunctions} />
+                </div>
+              </div>
+            </div>
           </div>
           {/* End .row */}
         </div>

@@ -107,7 +107,22 @@ export default function HomeComponent() {
           class="elfsight-app-383394dc-1b9d-4627-87e3-092d80fffc67"
           data-elfsight-app-lazy
         ></div>
+        <div className="hide-free-label">
+          <button
+            className="advance-search-icon ud-btn btn-thm mt15"
+            type="button"
+          >
+            <a
+              style={{ color: "inherit" }}
+              target="_blank"
+              href="https://www.google.com/maps/place/Miami+Realty+Solution+Group/@25.7700997,-80.1976658,17z/data=!4m8!3m7!1s0x88d9b684f5abfcd9:0x760aaaedeefb450f!8m2!3d25.7700997!4d-80.1950909!9m1!1b1!16s%2Fg%2F1w6_pmdr?entry=ttu"
+            >
+              Review
+            </a>
+          </button>
+        </div>
       </div>
+
       <section className="footer-style1 pt-0 pb-0">
         <Footer />
       </section>

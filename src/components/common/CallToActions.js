@@ -43,7 +43,7 @@ const CallToActions = () => {
                   href="/contact"
                   className="ud-btn btn-transparent mr30 mr0-xs"
                 >
-                  Contact Us
+                  Contact
                   <i className="fal fa-arrow-right-long" />
                 </Link>
                 <Link href="/contact" className="ud-btn btn-dark">

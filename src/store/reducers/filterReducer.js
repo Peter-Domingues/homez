@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
+  zipCode: 0,
   propertyId: "",
   listingStatus: "All",
   propertyTypes: ["SingleFamilyResidence"],
@@ -8,9 +9,9 @@ const initialState = {
   bathroms: 0,
   squirefeet: {},
   yearBuilt: {},
+  city: "",
   filtersSelected: [
     { type: "PropertySubType", props: "SingleFamilyResidence" },
-    { type: "City", props: "Miami" },
     { type: "ListPrice", props: { min: 1000000, max: 8000001 } },
   ],
 };
@@ -47,6 +48,12 @@ const filtersSlice = createSlice({
     changePropertyId: (state, action) => {
       state.propertyId = action.payload;
     },
+    changeZipCode: (state, action) => {
+      state.zipCode = action.payload;
+    },
+    changeCity: (state, action) => {
+      state.city = action.payload;
+    },
     clearFilters: () => initialState,
   },
 });
@@ -61,6 +68,8 @@ export const {
   changeYearbuilt,
   changeFiltersSelected,
   changePropertyId,
+  changeZipCode,
+  changeCity,
   clearFilters,
 } = filtersSlice.actions;
 export default filtersSlice.reducer;

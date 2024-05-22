@@ -5,7 +5,7 @@ const PropertyDetails = ({ data }) => {
   const columns = [
     [
       {
-        label: "MLS number",
+        label: "MLS #",
         value: data.ListingKey,
       },
       {

@@ -6,10 +6,11 @@ import Select from "react-select";
 const LookingFor = () => {
   const dispatch = useDispatch();
   const inqueryType = [
-    { value: "Condominium", label: "Apartment" },
+    { value: "Condominium", label: "Condominium" },
     { value: "Townhouse", label: "Townhouse" },
-    { value: "SingleFamilyResidence", label: "House" },
+    { value: "SingleFamilyResidence", label: "Single Family" },
     { value: "Commercial", label: "Commercial" },
+    { value: "Land", label: "Land" },
   ];
 
   const customStyles = {

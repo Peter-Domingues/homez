@@ -88,7 +88,7 @@ const MainMenu = () => {
               topMenu == "about" ? "title menuActive" : "title menu-item"
             }
           >
-            ABOUT US
+            ABOUT ME
           </span>
         </a>
       </li>
@@ -99,7 +99,7 @@ const MainMenu = () => {
               topMenu == "about" ? "title menuActive" : "title menu-item"
             }
           >
-            CONTACT US
+            CONTACT
           </span>
         </a>
       </li>

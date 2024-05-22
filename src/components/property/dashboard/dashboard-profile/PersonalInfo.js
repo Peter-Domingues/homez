@@ -153,7 +153,7 @@ const PersonalInfo = () => {
         <div className="col-md-12">
           <div className="mb10">
             <label className="heading-color ff-heading fw600 mb10">
-              About me
+              About Me
             </label>
             <textarea
               cols={30}

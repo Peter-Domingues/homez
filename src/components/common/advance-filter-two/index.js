@@ -92,7 +92,7 @@ const AdvanceFilterModal = ({ filterFunctions }) => {
 
             <div className="col-sm-6">
               <div className="widget-wrapper">
-                <h6 className="list-title">MLS number</h6>
+                <h6 className="list-title">MLS #</h6>
                 <div className="form-style2">
                   <input
                     type="text"

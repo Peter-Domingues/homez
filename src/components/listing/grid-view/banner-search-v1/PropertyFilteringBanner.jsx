@@ -11,12 +11,14 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   changeBathroms,
   changeBedrooms,
+  changeCity,
   changeFiltersSelected,
   changeListingStatus,
   changePriceRange,
   changePropertyTypes,
   changeSquirefeet,
   changeYearbuilt,
+  changeZipCode,
   clearFilters,
 } from "@/store/reducers/filterReducer";
 
@@ -91,7 +93,6 @@ export default function PropertyFilteringBanner() {
       0,
       [
         { type: "PropertySubType", props: "SingleFamilyResidence" },
-        { type: "City", props: "Miami" },
         { type: "ListPrice", props: { min: 1000000, max: 8000001 } },
       ],
       ""
@@ -125,7 +126,6 @@ export default function PropertyFilteringBanner() {
   };
 
   const handlepropertyTypes = (elm) => {
-    console.log(elm.length == 0);
     if (elm.length == 0) {
       dispatch(changePropertyTypes([]));
       addOrRemoveFilters("PropertySubType", "");
@@ -167,6 +167,15 @@ export default function PropertyFilteringBanner() {
     dispatch(changeYearbuilt(elm));
   };
 
+  const handleZipCode = (elm) => {
+    addOrRemoveFilters("PostalCode", elm);
+    dispatch(changeZipCode(elm));
+  };
+  const handleCity = (elm) => {
+    addOrRemoveFilters("City", elm);
+    dispatch(changeCity(elm));
+  };
+
   const handleSearch = () => {
     setPageNumber(1);
     getProperties(0, filters.filtersSelected, filters.listingStatus);
@@ -180,6 +189,8 @@ export default function PropertyFilteringBanner() {
     handlebathroms,
     handlesquirefeet,
     handleyearBuilt,
+    handleZipCode,
+    handleCity,
     priceRange: filters.priceRange,
     listingStatus: filters.listingStatus,
     propertyTypes: filters.propertyTypes,
@@ -188,6 +199,8 @@ export default function PropertyFilteringBanner() {
     bathroms: filters.bathroms,
     squirefeet: filters.squirefeet,
     yearBuilt: filters.yearBuilt,
+    zipCode: filters.zipCode,
+    city: filters.city,
     categories,
     setSearchQuery,
   };

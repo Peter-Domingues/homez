@@ -8,6 +8,8 @@ import Bedroom from "./Bedroom";
 import Bathroom from "./Bathroom";
 import SquareFeet from "./SquareFeet";
 import YearBuilt from "./YearBuilt";
+import ZipCode from "./ZipCode";
+import Location from "./Location";
 
 const ListingSidebar = ({ filterFunctions, handleSearch }) => {
   return (
@@ -66,37 +68,15 @@ const ListingSidebar = ({ filterFunctions, handleSearch }) => {
       </div>
       {/* End .widget-wrapper */}
 
-      {/* <div className="widget-wrapper">
-        <div className="feature-accordion">
-          <div className="accordion" id="accordionExample">
-            <div className="accordion-item border-none">
-              <h2 className="accordion-header" id="headingOne">
-                <button
-                  className="accordion-button border-none p-0 after-none feature-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
-                  <span className="flaticon-settings" /> Other Features
-                </button>
-              </h2>
-              <div
-                id="collapseOne"
-                className="accordion-collapse collapse"
-                aria-labelledby="headingOne"
-                data-bs-parent="#accordionExample"
-              >
-                <div className="accordion-body p-0 mt15">
-                  <OtherFeatures filterFunctions={filterFunctions} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
-      {/* End .widget-wrapper */}
+      <div className="widget-wrapper">
+        <h6 className="list-title">Zip Code#</h6>
+        <ZipCode filterFunctions={filterFunctions} />
+      </div>
+
+      <div className="widget-wrapper">
+        <h6 className="list-title">City</h6>
+        <Location filterFunctions={filterFunctions} />
+      </div>
 
       <div className="widget-wrapper mb20">
         <div className="btn-area d-grid align-items-center">

@@ -1,6 +1,6 @@
 "use client";
 import DefaultHeader from "@/components/common/DefaultHeader";
-import Footer from "@/components/common/default-footer";
+import Footer from "@/components/home/footer";
 import MobileMenu from "@/components/common/mobile-menu";
 
 import PropertyFilteringBanner from "@/components/listing/grid-view/banner-search-v1/PropertyFilteringBanner";

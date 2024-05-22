@@ -20,11 +20,11 @@ module.exports = [
     path: "/#sold",
   },
   {
-    label: "ABOUT US",
+    label: "ABOUT ME",
     path: "/about",
   },
   {
-    label: "CONTACT US",
+    label: "CONTACT",
     path: "/contact",
   },
 ];

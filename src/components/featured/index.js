@@ -13,7 +13,7 @@ const Featured = () => {
     const filterProps = [
       { type: "PropertySubType", props: "SingleFamilyResidence" },
       { type: "City", props: "Miami" },
-      { type: "ListPrice", props: { min: 1000000, max: 8000001 } },
+      { type: "ListPrice", props: { min: 0, max: 8000001 } },
     ];
 
     await fetchInfo(0, filterProps, "sale")

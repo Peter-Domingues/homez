@@ -20,7 +20,7 @@ const Contact = () => {
           <div className="row d-flex">
             <div className="col-lg-5 position-relative">
               <div className="home8-contact-form default-box-shadow1 bdrs12  bdr1 p30 mb30-md bgc-white">
-                <h4 className="form-title mb25">Send Us An Email</h4>
+                <h4 className="form-title mb25">Send Me An Email</h4>
                 <Form />
               </div>
             </div>
@@ -35,7 +35,7 @@ const Contact = () => {
                     className="col-lg-6 p30"
                     style={{ lineBreak: "anywhere" }}
                   >
-                    <h4 className="form-title mb25">Contact us</h4>
+                    <h4 className="form-title mb25">Contact</h4>
                     <label className="heading-color ff-heading fw600 mb10">
                       Address
                     </label>

@@ -8,7 +8,7 @@ const MenuWidget = () => {
         { label: "Featured Properties", href: "#featured" },
         { label: "New & Pre-construction", href: "#new" },
         { label: "Advanced Serch", href: "/listing" },
-        { label: "About us", href: "/about" },
+        { label: "About me", href: "/about" },
       ],
     },
   ];

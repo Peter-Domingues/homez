@@ -83,7 +83,7 @@ const FilterContent = () => {
                   </div>
                 </div> */}
                 <div className="col-md-4 col-xl-3 bdrr1 bdrrn-sm">
-                  <label>MLS number</label>
+                  <label>MLS #</label>
                   <div className="advance-search-field position-relative">
                     <form className="form-search position-relative">
                       <div className="box-search">
@@ -105,7 +105,7 @@ const FilterContent = () => {
                 <div className="col-md-4 col-xl-2 bdrr1 bdrrn-sm px20 pl15-sm">
                   <div className="mt-3 mt-md-0 px-0">
                     <div className="bootselect-multiselect">
-                      <label className="fz14">Loking For</label>
+                      <label className="fz14">Looking For</label>
                       <LookingFor />
                     </div>
                   </div>
@@ -171,7 +171,7 @@ const FilterContent = () => {
                       data-bs-toggle="modal"
                       data-bs-target="#advanceSeachModal"
                     >
-                      <span className="flaticon-settings" /> Advanced
+                      <span className="flaticon-settings" /> Advanced Search
                     </button>
                     <button
                       className="advance-search-icon ud-btn btn-thm ms-4"

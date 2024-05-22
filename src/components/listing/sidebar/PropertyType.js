@@ -4,10 +4,11 @@ import React from "react";
 
 const PropertyType = ({ filterFunctions }) => {
   const options = [
-    { value: "Condominium", label: "Apartment" },
+    { value: "Condominium", label: "Condominium" },
     { value: "Townhouse", label: "Townhouse" },
-    { value: "SingleFamilyResidence", label: "House" },
+    { value: "SingleFamilyResidence", label: "Single Family" },
     { value: "Commercial", label: "Commercial" },
+    { value: "Land", label: "Land" },
   ];
 
   console.log(filterFunctions.propertyTypes);
