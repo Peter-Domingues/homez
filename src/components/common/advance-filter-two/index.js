@@ -94,11 +94,7 @@ const AdvanceFilterModal = ({ filterFunctions }) => {
               <div className="widget-wrapper">
                 <h6 className="list-title">MLS #</h6>
                 <div className="form-style2">
-                  <input
-                    type="text"
-                    className="form-control"
-                    placeholder="RT04949213"
-                  />
+                  <input type="text" className="form-control" />
                 </div>
               </div>
             </div>

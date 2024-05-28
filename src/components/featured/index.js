@@ -2,6 +2,7 @@
 import { fetchInfo } from "@/api/properties";
 import FeaturedListings from "@/components/home/FeatuerdListings";
 import { useCallback, useEffect, useState } from "react";
+import ApartmentTypes from "../home/ApartmentTypes";
 
 const Featured = () => {
   const [properties, setProperties] = useState();
@@ -16,7 +17,7 @@ const Featured = () => {
       { type: "ListPrice", props: { min: 0, max: 8000001 } },
     ];
 
-    await fetchInfo(0, filterProps, "sale")
+    await fetchInfo(0, filterProps, "sale", "", "6")
       .then((response) => {
         let propertiesList = [];
 
@@ -51,7 +52,8 @@ const Featured = () => {
           {/* End .row */}
 
           <div className="row" data-aos="fade-up" data-aos-delay="300">
-            <FeaturedListings properties={properties} />
+            <ApartmentTypes data={properties} loading={loading} />
+            {/* <FeaturedListings properties={properties} /> */}
           </div>
           {/* End .row */}
         </div>

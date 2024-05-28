@@ -35,12 +35,10 @@ export default function HomeComponent() {
       </section>
       <Featured />
       <Divider />
-
-      {/* <New /> */}
-      {/* <Divider /> */}
+      <New />
+      <Divider />
       <Sold />
       <Cta />
-
       <section className="pb0 pt0">
         <div className="cta-banner3 bgc-green-dark mx-auto maxw1600 pt100 pt60-lg pb90 pb60-lg position-relative overflow-hidden mx20-lg">
           <div className="container">
@@ -94,7 +92,6 @@ export default function HomeComponent() {
           </div>
         </div>
       </section>
-
       <CuratorWidget />
       <div className="testimonials pb90 pb30-md pt90 p30-md">
         <h2 className="title title-font ">TESTIMONIALS</h2>
@@ -122,7 +119,6 @@ export default function HomeComponent() {
           </button>
         </div>
       </div>
-
       <section className="footer-style1 pt-0 pb-0">
         <Footer />
       </section>

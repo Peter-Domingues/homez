@@ -21,8 +21,8 @@ const PriceRange = ({ filterFunctions }) => {
       <div className="range-wrapper">
         <InputRange
           formatLabel={() => ``}
-          maxValue={8000000}
-          minValue={120000}
+          maxValue={100000000}
+          minValue={500000}
           value={{
             min: filterFunctions?.priceRange.min,
             max: filterFunctions?.priceRange.max,

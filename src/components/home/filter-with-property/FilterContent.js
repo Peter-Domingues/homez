@@ -67,21 +67,6 @@ const FilterContent = () => {
           >
             <div className="advance-content-style3 at-home5">
               <div className="row align-items-center">
-                {/* <div className="col-md-4 col-xl-3 bdrr1 bdrrn-sm">
-                  <label>Search</label>
-                  <div className="advance-search-field position-relative">
-                    <form className="form-search position-relative">
-                      <div className="box-search">
-                        <input
-                          className="form-control bgc-f7 bdrs12 ps-0"
-                          type="text"
-                          name="search"
-                          placeholder={`Enter Keyword for ${tab.label}`}
-                        />
-                      </div>
-                    </form>
-                  </div>
-                </div> */}
                 <div className="col-md-4 col-xl-3 bdrr1 bdrrn-sm">
                   <label>MLS #</label>
                   <div className="advance-search-field position-relative">
@@ -90,7 +75,6 @@ const FilterContent = () => {
                         <input
                           className="form-control bgc-f7 bdrs12 ps-0"
                           type="text"
-                          placeholder="RT04949213"
                           onChange={(e) =>
                             dispatch(changePropertyId(e.target.value))
                           }
@@ -140,7 +124,7 @@ const FilterContent = () => {
                           <div className="range-wrapper at-home10">
                             <InputRange
                               formatLabel={() => ``}
-                              maxValue={8000000}
+                              maxValue={100000000}
                               minValue={500000}
                               value={price.value}
                               onChange={(value) => handleOnChange(value)}

@@ -16,7 +16,7 @@ const PriceRange = () => {
       <div className="range-wrapper">
         <InputRange
           formatLabel={() => ``}
-          maxValue={8000000}
+          maxValue={100000000}
           minValue={500000}
           value={price.value}
           onChange={(value) => handleOnChange(value)}

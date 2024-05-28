@@ -24,9 +24,9 @@ const AdvanceFilterModal = () => {
   const filters = useSelector((state) => state.filter);
   const router = useRouter();
   const catOptions = [
-    { value: "Condominium", label: "Apartment" },
+    { value: "Condominium", label: "Condo" },
     { value: "Townhouse", label: "Townhouse" },
-    { value: "SingleFamilyResidence", label: "House" },
+    { value: "SingleFamilyResidence", label: "Single Family" },
     { value: "Commercial", label: "Commercial" },
   ];
 
@@ -165,7 +165,6 @@ const AdvanceFilterModal = () => {
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="RT04949213"
                     onChange={handlePropertyId}
                   />
                 </div>
