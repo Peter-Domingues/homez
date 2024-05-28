@@ -4,6 +4,10 @@ module.exports = [
     path: "/",
   },
   {
+    label: "MY LISTINGS",
+    path: "/#mylistings",
+  },
+  {
     label: "FEATURED PROPERTIES",
     path: "/#featured",
   },
