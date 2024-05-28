@@ -76,7 +76,7 @@ const FeaturedListings = ({ properties }) => {
 
                   <div className="d-flex justify-content-between align-items-center">
                     <div className="list-price">
-                      ${formattedPrice(listing?.ListPrice)}
+                      {formattedPrice(listing?.ListPrice)}
                     </div>
                     <div className="list-meta2 d-flex align-items-center">
                       <a href="#" className="mr10">

@@ -13,6 +13,7 @@ import { Provider } from "react-redux";
 import store from "@/store/reducers";
 import CuratorWidget from "../common/curatorWidget";
 import Image from "next/image";
+import MyListings from "../myListings";
 
 export default function HomeComponent() {
   return (
@@ -33,6 +34,8 @@ export default function HomeComponent() {
           </div>
         </div>
       </section>
+      <MyListings />
+      <Divider />
       <Featured />
       <Divider />
       <New />
