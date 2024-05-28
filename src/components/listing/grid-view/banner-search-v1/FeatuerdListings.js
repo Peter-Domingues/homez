@@ -53,6 +53,7 @@ const FeaturedListings = ({ data, colstyle }) => {
               </h6>
 
               <div className="d-flex justify-content-between align-items-center">
+                <div className="list-price">{listing.City ?? "Miami"}</div>
                 <div className="list-price">
                   {formattedPrice(listing.ListPrice)}{" "}
                   {listing.PropertyType.includes("Lease") && <span>/ mo</span>}

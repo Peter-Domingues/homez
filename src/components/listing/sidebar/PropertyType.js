@@ -10,7 +10,6 @@ const PropertyType = ({ filterFunctions }) => {
     { value: "Commercial", label: "Commercial" },
   ];
 
-  console.log(filterFunctions.propertyTypes);
   return (
     <>
       <label className="custom_checkbox">

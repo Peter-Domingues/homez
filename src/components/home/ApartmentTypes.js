@@ -27,6 +27,7 @@ const ApartmentTypes = ({ data, loading, columns }) => {
                   <h6 className="title mb-1">
                     {formattedPrice(apartment.ListPrice)}
                   </h6>
+                  <h6 className="title mb-1">{apartment.City}</h6>
                 </div>
                 <div className="bottom-area">
                   <Link

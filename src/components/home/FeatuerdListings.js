@@ -75,9 +75,11 @@ const FeaturedListings = ({ properties }) => {
                   </h6>
 
                   <div className="d-flex justify-content-between align-items-center">
+                    <h6 className="title mb-1">{listing.City}</h6>
                     <div className="list-price">
                       {formattedPrice(listing?.ListPrice)}
                     </div>
+
                     <div className="list-meta2 d-flex align-items-center">
                       <a href="#" className="mr10">
                         <span className="flaticon-bed mr5" />{" "}

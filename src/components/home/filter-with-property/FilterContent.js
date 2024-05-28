@@ -4,9 +4,9 @@ import { useRouter } from "next/navigation";
 import InputRange from "react-input-range";
 import "react-input-range/lib/css/index.css";
 import LookingFor from "./LookingFor";
-import Location from "./Location";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  changeListingStatus,
   changePriceRange,
   changePropertyId,
 } from "@/store/reducers/filterReducer";
@@ -16,8 +16,25 @@ const FilterContent = () => {
   const filters = useSelector((state) => state.filter);
   const router = useRouter();
   const [activeTab, setActiveTab] = useState("buy");
+  const [maxMinPrice, setMaxMinPrice] = useState({
+    value:
+      filters.listingStatus === "rent"
+        ? { min: 0, max: 50000 }
+        : { min: 500000, max: 8000000 },
+  });
+  const [price, setPrice] = useState({ value: { min: 500000, max: 8000000 } });
 
   const handleTabClick = (tab) => {
+    dispatch(changeListingStatus(tab === "buy" ? "sale" : "rent"));
+
+    if (tab === "buy") {
+      setMaxMinPrice({ value: { min: 500000, max: 8000000 } });
+      setPrice({ value: { min: 500000, max: 8000000 } });
+    } else {
+      setMaxMinPrice({ value: { min: 0, max: 50000 } });
+      setPrice({ value: { min: 0, max: 50000 } });
+    }
+
     setActiveTab(tab);
   };
 
@@ -25,8 +42,6 @@ const FilterContent = () => {
     { id: "buy", label: "Buy" },
     { id: "rent", label: "Rent" },
   ];
-
-  const [price, setPrice] = useState({ value: { min: 500000, max: 8000000 } });
 
   const handleOnChange = (value) => {
     setPrice({ value });
@@ -37,6 +52,8 @@ const FilterContent = () => {
       })
     );
   };
+
+  console.log(filters.priceRange);
 
   const handleSearch = () => {
     if (filters.propertyId)
@@ -96,16 +113,6 @@ const FilterContent = () => {
                 </div>
                 {/* End col-md-4 */}
 
-                {/* <div className="col-md-4 col-xl-2 bdrr1 bdrrn-sm px20 pl15-sm">
-                  <div className="mt-3 mt-md-0">
-                    <div className="bootselect-multiselect">
-                      <label className="fz14">Location</label>
-                      <Location />
-                    </div>
-                  </div>
-                </div> */}
-                {/* End col-md-4 */}
-
                 <div className="col-md-4 col-xl-2 bdrr1 bdrrn-sm px20 pl15-sm">
                   <div className="mt-3 mt-md-0">
                     <div className="dropdown-lists">
@@ -124,8 +131,8 @@ const FilterContent = () => {
                           <div className="range-wrapper at-home10">
                             <InputRange
                               formatLabel={() => ``}
-                              maxValue={100000000}
-                              minValue={500000}
+                              maxValue={maxMinPrice.value.max}
+                              minValue={maxMinPrice.value.min}
                               value={price.value}
                               onChange={(value) => handleOnChange(value)}
                               id="slider"
