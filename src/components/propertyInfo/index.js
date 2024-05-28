@@ -107,50 +107,6 @@ const PropertyInfoComponent = () => {
       {/* End Property All Single V4  */}
 
       {/* Start similar-items  */}
-      <section className="similar-items pt80 pb90">
-        <div className="container">
-          <div className="row mt30 align-items-center justify-content-between">
-            <div className="col-auto">
-              <div className="main-title">
-                <h2 className="title">Nearby Similar Homes</h2>
-                <p className="paragraph">
-                  Aliquam lacinia diam quis lacus euismod
-                </p>
-              </div>
-            </div>
-            {/* End header */}
-
-            <div className="col-auto mb30">
-              <div className="row align-items-center justify-content-center">
-                <div className="col-auto">
-                  <button className="featured-prev__active swiper_button">
-                    <i className="far fa-arrow-left-long" />
-                  </button>
-                </div>
-                {/* End prev */}
-
-                <div className="col-auto">
-                  <div className="pagination swiper--pagination featured-pagination__active" />
-                </div>
-                {/* End pagination */}
-
-                <div className="col-auto">
-                  <button className="featured-next__active swiper_button">
-                    <i className="far fa-arrow-right-long" />
-                  </button>
-                </div>
-                {/* End Next */}
-              </div>
-              {/* End .col for navigation and pagination */}
-            </div>
-            {/* End .col for navigation and pagination */}
-          </div>
-          {/* End .row */}
-
-          {/* End .row */}
-        </div>
-      </section>
-      {/* End similar-items  */}
 
       {/* Start Our Footer */}
       <section className="footer-style1 pt60 pb-0">
