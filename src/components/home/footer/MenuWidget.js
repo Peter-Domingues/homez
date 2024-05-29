@@ -6,7 +6,7 @@ const MenuWidget = () => {
       title: "Quick Links",
       links: [
         { label: "Featured Properties", href: "#featured" },
-        { label: "New & Pre-construction", href: "#new" },
+        { label: "Pre-construction", href: "#new" },
         { label: "Advanced Serch", href: "/listing" },
         { label: "About me", href: "/about" },
       ],

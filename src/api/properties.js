@@ -146,7 +146,7 @@ const fetchPropertieByPriceRange = async (min, max) => {
 
 const fetchMember = async (id) => {
   const xApiKey = process.env.REACT_APP_REALTY_X_API_KEY;
-  const url = `https://api.realtyfeed.com/reso/odata/Property?filter=ListAgentMlsId eq '3535815'`;
+  const url = `https://api.realtyfeed.com/reso/odata/Property?filter=ListAgentMlsId eq '3535815'&$orderby=ListPrice desc`;
   const token = await getToken();
 
   const response = await fetch(url, {

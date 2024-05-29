@@ -2,6 +2,7 @@
 import { fetchInfo, fetchMember } from "@/api/properties";
 import ApartmentTypes from "@/components/home/ApartmentTypes";
 import { useCallback, useEffect, useState } from "react";
+import Image from "next/image";
 
 const New = () => {
   const [properties, setProperties] = useState();
@@ -52,11 +53,7 @@ const New = () => {
           <div className="row" data-aos="fade-up" data-aos-delay="0">
             <div className="col-lg-6 mx-auto">
               <div className="main-title2 text-center">
-                <h2 className="title title-font">
-                  FEATURED NEW <span style={{ fontFamily: "OpenSans" }}>&</span>
-                  <br />
-                  PRE-CONSTRUCTION
-                </h2>
+                <h2 className="title title-font">PRE-CONSTRUCTION</h2>
               </div>
             </div>
           </div>

@@ -240,7 +240,8 @@ li {
   font-family: "Safira March";
   font-size: large;
   line-height: 2.5;
-  letter-spacing: 4px;
+  letter-spacing: 4px !important;
+  color: var(--pantone-green);
 }
 
 .title-font-size {

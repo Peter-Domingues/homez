@@ -64,7 +64,7 @@ const MainMenu = () => {
               topMenu == "new" ? "title menuActive" : "title menu-item"
             }
           >
-            NEW & PRE-CONSTRUCTION
+            PRE-CONSTRUCTION
           </span>
         </a>
       </li>

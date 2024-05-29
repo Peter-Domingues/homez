@@ -12,7 +12,7 @@ module.exports = [
     path: "/#featured",
   },
   {
-    label: "NEW & PRE-CONSTRUCTION",
+    label: "PRE-CONSTRUCTION",
     path: "/#new",
   },
   {
