@@ -32,7 +32,6 @@ const Location = ({ filterFunctions }) => {
     { value: "South Miami", label: "South Miami" },
     { value: "Sunny Isle", label: "Sunny Isle" },
     { value: "Sunset", label: "Sunset" },
-    { value: "The Roads", label: "The Roads" },
     { value: "Weston", label: "Weston" },
     { value: "Wynwood", label: "Wynwood" },
   ];
