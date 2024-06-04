@@ -134,7 +134,6 @@ export default function PropertyFilteringBanner() {
         ? filters.propertyTypes.filter((el) => el != elm)
         : [...filters.propertyTypes, elm];
 
-      console.log(newProperties);
       dispatch(changePropertyTypes(newProperties));
       addOrRemoveFilters("PropertySubType", newProperties);
     }

@@ -6,11 +6,16 @@ import { useSelector } from "react-redux";
 
 const PriceRange = ({ filterFunctions }) => {
   const filters = useSelector((state) => state.filter);
+  const priceDefaultRent = { min: 0, max: 50000 };
+  const priceDefaultSale = { min: 500000, max: 8000000 };
+
   const [price, setPrice] = useState({
     value:
-      filters.listingStatus === "rent"
-        ? { min: 0, max: 50000 }
-        : { min: 500000, max: 8000000 },
+      filters.priceRange !== priceDefaultSale
+        ? filters.priceRange
+        : filters.listingStatus === "rent"
+        ? priceDefaultRent
+        : priceDefaultSale,
   });
 
   const [maxMinPrice, setMaxMinPrice] = useState({
@@ -21,26 +26,20 @@ const PriceRange = ({ filterFunctions }) => {
   });
 
   useEffect(() => {
-    console.log("test");
-    if (filters.listingStatus === "rent") {
-      setPrice({ value: { min: 0, max: 50000 } });
+    if (filters.priceRange == priceDefaultSale) {
+      if (filters.listingStatus === "rent") {
+        setPrice({ value: priceDefaultRent });
 
-      filterFunctions?.handlepriceRange({
-        min: 0,
-        max: 50000,
-      });
+        filterFunctions?.handlepriceRange(priceDefaultRent);
+        return setMaxMinPrice({ value: { min: 0, max: 50000 } });
+      }
 
-      return setMaxMinPrice({ value: { min: 0, max: 50000 } });
+      filterFunctions?.handlepriceRange(priceDefaultSale);
+
+      setPrice({ value: priceDefaultSale });
+      return setMaxMinPrice({ value: { min: 500000, max: 8000000 } });
     }
-
-    filterFunctions?.handlepriceRange({
-      min: 500000,
-      max: 8000000,
-    });
-
-    setPrice({ value: { min: 500000, max: 8000000 } });
-
-    return setMaxMinPrice({ value: { min: 500000, max: 8000000 } });
+    setPrice({ value: filters.priceRange });
   }, [filters.listingStatus]);
 
   const handleOnChange = (value) => {
@@ -60,8 +59,8 @@ const PriceRange = ({ filterFunctions }) => {
           maxValue={maxMinPrice.value.max}
           minValue={maxMinPrice.value.min}
           value={{
-            min: filterFunctions?.priceRange.min,
-            max: filterFunctions?.priceRange.max,
+            min: filters?.priceRange.min,
+            max: filters?.priceRange.max,
           }}
           onChange={(value) => handleOnChange(value)}
           id="slider"

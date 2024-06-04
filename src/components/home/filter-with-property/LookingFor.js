@@ -3,7 +3,7 @@ import { changePropertyTypes } from "@/store/reducers/filterReducer";
 import { useDispatch } from "react-redux";
 import Select from "react-select";
 
-const LookingFor = () => {
+const LookingFor = ({ addOrRemoveFilters }) => {
   const dispatch = useDispatch();
   const inqueryType = [
     { value: "Condominium", label: "Condo" },
@@ -30,6 +30,12 @@ const LookingFor = () => {
       };
     },
   };
+
+  const handlePropertyTypes = (elm) => {
+    dispatch(changePropertyTypes(elm));
+    addOrRemoveFilters("PropertySubType", elm);
+  };
+
   return (
     <>
       <Select
@@ -37,7 +43,7 @@ const LookingFor = () => {
         name="colors"
         options={inqueryType}
         styles={customStyles}
-        onChange={(e) => dispatch(changePropertyTypes([e.value]))}
+        onChange={(e) => handlePropertyTypes([e.value])}
         className="text-start select-borderless"
         classNamePrefix="select"
         required

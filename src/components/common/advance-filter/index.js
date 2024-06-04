@@ -23,7 +23,7 @@ const AdvanceFilterModal = () => {
   const dispatch = useDispatch();
   const filters = useSelector((state) => state.filter);
   const router = useRouter();
-  const catOptions = [
+  const propertyTypes = [
     { value: "Condominium", label: "Condo" },
     { value: "Townhouse", label: "Townhouse" },
     { value: "SingleFamilyResidence", label: "Single Family" },
@@ -97,6 +97,12 @@ const AdvanceFilterModal = () => {
     addOrRemoveFilters("City", elm);
     dispatch(changeCity(elm));
   };
+
+  const handlePropertyType = (elm) => {
+    addOrRemoveFilters("City", elm);
+    dispatch(changeCity(elm));
+  };
+
   const filterFunctions = {
     handleZipCode,
     handleCity,
@@ -145,13 +151,14 @@ const AdvanceFilterModal = () => {
                 <h6 className="list-title">Type</h6>
                 <div className="form-style2 input-group">
                   <Select
-                    defaultValue={[catOptions[1]]}
+                    defaultValue={[propertyTypes[1]]}
                     name="colors"
-                    options={catOptions}
+                    options={propertyTypes}
                     styles={customStyles}
                     className="select-custom"
                     classNamePrefix="select"
                     required
+                    onChange={(e) => handlePropertyType(e.target.value)}
                   />
                 </div>
               </div>

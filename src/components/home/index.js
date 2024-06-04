@@ -25,7 +25,7 @@ export default function HomeComponent() {
           <Hero />
         </section>
       </div>
-      <section className="pt-0 pb110 bgc-green-light pb50-md">
+      <section className="pt-0 pb110 bgc-green-light pb50-md paddingHorizontal">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -35,6 +35,7 @@ export default function HomeComponent() {
         </div>
       </section>
       <MyListings />
+
       <Divider />
       <Featured />
       <Divider />

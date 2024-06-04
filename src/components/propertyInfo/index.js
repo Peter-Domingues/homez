@@ -46,15 +46,15 @@ const PropertyInfoComponent = () => {
       {/* End Mobile Nav  */}
 
       {/* Property Slider Gallery */}
-      <section className="p-0 bgc-white">
+      <section className="pt0 pb0 bgc-f7 paddingHorizontal">
         <PropertyGallery data={data} />
       </section>
       {/* End Property Slider Gallery */}
 
       {/* Property All Single V4 */}
-      <section className="pt30 pb90 bgc-f7">
+      <section className="pt30 pb90 bgc-f7 paddingHorizontal">
         <div className="container">
-          <div className="row sp-v5-property-details">
+          <div className="row sp-v5-property-details pl50 pr50">
             <PropertyHeader data={data} />
           </div>
           {/* End .row */}

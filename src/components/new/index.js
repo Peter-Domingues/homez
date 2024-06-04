@@ -2,7 +2,6 @@
 import { fetchInfo, fetchMember } from "@/api/properties";
 import ApartmentTypes from "@/components/home/ApartmentTypes";
 import { useCallback, useEffect, useState } from "react";
-import Image from "next/image";
 
 const New = () => {
   const [properties, setProperties] = useState();
@@ -33,22 +32,13 @@ const New = () => {
       });
   }, []);
 
-  const getMember = useCallback(async () => {
-    await fetchMember()
-      .then((response) => {
-        console.log(response);
-      })
-      .finally(() => {});
-  }, []);
-
   useEffect(() => {
     getProperties();
-    // getMember();
   }, []);
 
   return (
     <>
-      <section className="pb90 pb30-md" id="new">
+      <section className="pb90 pb30-md paddingHorizontal" id="new">
         <div className="container">
           <div className="row" data-aos="fade-up" data-aos-delay="0">
             <div className="col-lg-6 mx-auto">
@@ -63,6 +53,28 @@ const New = () => {
             <ApartmentTypes data={properties} loading={loading} />
           </div>
           {/* End .row */}
+        </div>
+        <div className="neo">
+          <div
+            style={{
+              position: "absolute",
+              top: "70%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              color: "#ffffff",
+              fontSize: "24px",
+            }}
+          >
+            <div className="col-lg-12 text-left position-relative">
+              <a
+                className="advance-search-icon ud-btn btn-thm"
+                target="_blank"
+                href="https://www.newestateonly.com/landing/An1348/Anastasia_Mastantuono"
+              >
+                FULL ACCESS
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </>

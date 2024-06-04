@@ -13,6 +13,41 @@ html {
   -o-object-fit: contain !important;
   object-fit: contain !important;
 }
+.neo {
+  background-image: url(../images/preConstruction.jpg);
+
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 400px;
+  position: relative;
+}
+
+.paddingHorizontal {
+  padding-left: 70px;
+  padding-right: 70px;
+
+  @media (max-width: 700px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.my-listings-video {
+  padding-left: 200px;
+  padding-right: 200px;
+
+  @media (max-width: 700px) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
 
 .form-select:focus {
   outline: none;

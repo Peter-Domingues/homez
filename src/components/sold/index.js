@@ -13,7 +13,7 @@ const Sold = () => {
     },
   ];
   return (
-    <section className="pb90 pb30-md" id="sold">
+    <section className="pb90 pb30-md paddingHorizontal" id="sold">
       <div className="container">
         <div className="row" data-aos="fade-up" data-aos-delay="0">
           <div className="col-lg-6 mx-auto">

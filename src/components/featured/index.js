@@ -40,7 +40,7 @@ const Featured = () => {
 
   return (
     <>
-      <section className="pb90 pb30-md mt40" id="featured">
+      <section className="pb90 pb30-md mt40 paddingHorizontal" id="featured">
         <div className="container">
           <div className="row" data-aos="fade-up" data-aos-delay="0">
             <div className="col-lg-6 mx-auto">

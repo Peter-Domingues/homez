@@ -6,6 +6,7 @@ import "react-input-range/lib/css/index.css";
 import LookingFor from "./LookingFor";
 import { useDispatch, useSelector } from "react-redux";
 import {
+  changeFiltersSelected,
   changeListingStatus,
   changePriceRange,
   changePropertyId,
@@ -24,14 +25,37 @@ const FilterContent = () => {
   });
   const [price, setPrice] = useState({ value: { min: 500000, max: 8000000 } });
 
+  const addOrRemoveFilters = (type, value) => {
+    if (value === "") {
+      const newFilters = filters.filtersSelected.filter((e) => e.type !== type);
+      return dispatch(changeFiltersSelected(newFilters));
+    }
+
+    if (!filters.filtersSelected.some((e) => e.type === type)) {
+      dispatch(
+        changeFiltersSelected([
+          ...filters.filtersSelected,
+          { type, props: value },
+        ])
+      );
+    } else {
+      const newFilters = filters.filtersSelected.filter((e) => e.type !== type);
+      dispatch(changeFiltersSelected([...newFilters, { type, props: value }]));
+    }
+    return;
+  };
+
   const handleTabClick = (tab) => {
     dispatch(changeListingStatus(tab === "buy" ? "sale" : "rent"));
 
     if (tab === "buy") {
       setMaxMinPrice({ value: { min: 500000, max: 8000000 } });
+      addOrRemoveFilters("ListPrice", { min: 500000, max: 8000000 });
+
       setPrice({ value: { min: 500000, max: 8000000 } });
     } else {
       setMaxMinPrice({ value: { min: 0, max: 50000 } });
+      addOrRemoveFilters("ListPrice", { min: 0, max: 50000 });
       setPrice({ value: { min: 0, max: 50000 } });
     }
 
@@ -45,6 +69,11 @@ const FilterContent = () => {
 
   const handleOnChange = (value) => {
     setPrice({ value });
+    addOrRemoveFilters("ListPrice", {
+      min: value.min,
+      max: value.max,
+    });
+
     dispatch(
       changePriceRange({
         min: value.min || price.min,
@@ -52,8 +81,6 @@ const FilterContent = () => {
       })
     );
   };
-
-  console.log(filters.priceRange);
 
   const handleSearch = () => {
     if (filters.propertyId)
@@ -107,7 +134,7 @@ const FilterContent = () => {
                   <div className="mt-3 mt-md-0 px-0">
                     <div className="bootselect-multiselect">
                       <label className="fz14">Looking For</label>
-                      <LookingFor />
+                      <LookingFor addOrRemoveFilters={addOrRemoveFilters} />
                     </div>
                   </div>
                 </div>

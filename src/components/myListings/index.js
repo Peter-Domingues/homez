@@ -2,6 +2,7 @@
 import { fetchMember } from "@/api/properties";
 import FeaturedListings from "@/components/home/FeatuerdListings";
 import { useCallback, useEffect, useState } from "react";
+import VideoComponent from "../common/VideoComponent";
 
 const MyListings = () => {
   const [properties, setProperties] = useState();
@@ -31,7 +32,7 @@ const MyListings = () => {
 
   return (
     <>
-      <section className="pb90 pb30-md mt40" id="mylistings">
+      <section className="pb90 pb30-md mt40 paddingHorizontal" id="mylistings">
         <div className="container">
           <div className="row" data-aos="fade-up" data-aos-delay="0">
             <div className="col-lg-6 mx-auto">
@@ -46,6 +47,14 @@ const MyListings = () => {
             <FeaturedListings properties={properties} />
           </div>
           {/* End .row */}
+        </div>
+        <div className="my-listings-video pt70">
+          <div className="mobile">
+            <VideoComponent source={"../images/myListings.mov"} />
+          </div>
+          <div className="pc">
+            <VideoComponent source={"../images/myListings.mov"} />
+          </div>
         </div>
       </section>
     </>
