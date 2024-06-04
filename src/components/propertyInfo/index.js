@@ -7,7 +7,7 @@ import PropertyAddress from "@/components/property/property-single-style/common/
 import PropertyDetails from "@/components/property/property-single-style/common/PropertyDetails";
 import PropertyHeader from "@/components/property/property-single-style/single-v4/PropertyHeader";
 import ProperytyDescriptions from "@/components/property/property-single-style/common/ProperytyDescriptions";
-import PropertyGallery from "@/components/property/property-single-style/single-v5/property-gallery";
+import PropertyGallery from "./PropertyGallery";
 import { useParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { fetchPropertieById } from "@/api/properties";
@@ -46,9 +46,9 @@ const PropertyInfoComponent = () => {
       {/* End Mobile Nav  */}
 
       {/* Property Slider Gallery */}
-      <section className="pt0 pb0 bgc-f7 paddingHorizontal">
+      <div className="row mt30">
         <PropertyGallery data={data} />
-      </section>
+      </div>
       {/* End Property Slider Gallery */}
 
       {/* Property All Single V4 */}

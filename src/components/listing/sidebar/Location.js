@@ -9,7 +9,7 @@ const Location = ({ filterFunctions }) => {
     { value: "Boca Raton", label: "Boca Raton" },
     { value: "Brickell", label: "Brickell" },
     { value: "Brickell Key", label: "Brickell Key" },
-    { value: "Coconut Groove", label: "Coconut Groove" },
+    { value: "Coconut Grove", label: "Coconut Grove" },
     { value: "Coral Gables", label: "Coral Gables" },
     { value: "Davie", label: "Davie" },
     { value: "Deerfield Beach", label: "Deerfield Beach" },

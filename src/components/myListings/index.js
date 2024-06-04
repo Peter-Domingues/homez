@@ -50,10 +50,10 @@ const MyListings = () => {
         </div>
         <div className="my-listings-video pt70">
           <div className="mobile">
-            <VideoComponent source={"../images/myListings.mov"} />
+            <VideoComponent source={"../images/bannermylisting.mp4"} />
           </div>
           <div className="pc">
-            <VideoComponent source={"../images/myListings.mov"} />
+            <VideoComponent source={"../images/bannermylisting.mp4"} />
           </div>
         </div>
       </section>

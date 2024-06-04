@@ -58,14 +58,23 @@ const New = () => {
           <div
             style={{
               position: "absolute",
-              top: "70%",
+              top: "50%",
               left: "50%",
               transform: "translate(-50%, -50%)",
               color: "#ffffff",
               fontSize: "24px",
+              width: "100%",
+              textAlign: "center",
             }}
           >
-            <div className="col-lg-12 text-left position-relative">
+            <div className="col-lg-12 position-relative">
+              <h3 className="mobile-text h6 title-font text-white title-font-size mb-0">
+                ACCESS ALL PRE-CONSTRUCTION
+              </h3>
+              <h3 className="mobile-text h6 title-font text-white title-font-size ">
+                IN SOUTH FLORIDA
+              </h3>
+
               <a
                 className="advance-search-icon ud-btn btn-thm"
                 target="_blank"

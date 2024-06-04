@@ -20,10 +20,10 @@ const FilterContent = () => {
   const [maxMinPrice, setMaxMinPrice] = useState({
     value:
       filters.listingStatus === "rent"
-        ? { min: 0, max: 50000 }
-        : { min: 500000, max: 8000000 },
+        ? { min: 0, max: 100000000 }
+        : { min: 0, max: 100000000 },
   });
-  const [price, setPrice] = useState({ value: { min: 500000, max: 8000000 } });
+  const [price, setPrice] = useState({ value: { min: 0, max: 100000000 } });
 
   const addOrRemoveFilters = (type, value) => {
     if (value === "") {

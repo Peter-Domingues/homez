@@ -13,16 +13,11 @@ const PriceRange = ({ filterFunctions }) => {
     value:
       filters.priceRange !== priceDefaultSale
         ? filters.priceRange
-        : filters.listingStatus === "rent"
-        ? priceDefaultRent
-        : priceDefaultSale,
+        : { min: 0, max: 100000000 },
   });
 
   const [maxMinPrice, setMaxMinPrice] = useState({
-    value:
-      filters.listingStatus === "rent"
-        ? { min: 0, max: 50000 }
-        : { min: 500000, max: 8000000 },
+    value: { min: 0, max: 100000000 },
   });
 
   useEffect(() => {
@@ -30,14 +25,12 @@ const PriceRange = ({ filterFunctions }) => {
       if (filters.listingStatus === "rent") {
         setPrice({ value: priceDefaultRent });
 
-        filterFunctions?.handlepriceRange(priceDefaultRent);
-        return setMaxMinPrice({ value: { min: 0, max: 50000 } });
+        return filterFunctions?.handlepriceRange(priceDefaultRent);
       }
 
       filterFunctions?.handlepriceRange(priceDefaultSale);
 
-      setPrice({ value: priceDefaultSale });
-      return setMaxMinPrice({ value: { min: 500000, max: 8000000 } });
+      return setPrice({ value: priceDefaultSale });
     }
     setPrice({ value: filters.priceRange });
   }, [filters.listingStatus]);
