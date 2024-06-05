@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import CurrencyInput from "react-currency-input-field";
 import InputRange from "react-input-range";
 import "react-input-range/lib/css/index.css";
 import { useSelector } from "react-redux";
@@ -59,22 +60,35 @@ const PriceRange = ({ filterFunctions }) => {
           id="slider"
         />
         <div className="d-flex align-items-center">
-          <input
+          <CurrencyInput
             id="slider-range-value1"
-            type="number"
             value={price.value.min}
-            onChange={(e) =>
-              handleOnChange({ min: e.target.value, max: price.value.max })
+            allowDecimals={false}
+            onValueChange={(e) =>
+              handleOnChange({
+                min: e,
+                max: price.value.max,
+              })
             }
+            prefix={"$"}
+            step={10}
+            decimalsLimit={2}
           />
           <i className="fa-sharp fa-solid fa-minus mx-2 dark-color icon" />
-          <input
-            id="slider-range-value1"
-            type="number"
+
+          <CurrencyInput
+            id="slider-range-value2"
             value={price.value.max}
-            onChange={(e) =>
-              handleOnChange({ min: price.value.min, max: e.target.value })
+            allowDecimals={false}
+            onValueChange={(e) =>
+              handleOnChange({
+                min: price.value.min,
+                max: e,
+              })
             }
+            prefix={"$"}
+            step={10}
+            decimalsLimit={2}
           />
         </div>
       </div>

@@ -67,7 +67,7 @@ export default function HomeComponent() {
                     Since day one, passionate about making dreams come through
                     the ideal setting for your life. Whether it’s a new home for
                     you or your family, a solid investment, or the commercial
-                    property of your dreams, f rom buying to renting, I am here
+                    property of your dreams, from buying to renting, I am here
                     to shape your future and let you focus on what truly
                     matters: enjoying life in a PARADISE like Miami.
                   </p>

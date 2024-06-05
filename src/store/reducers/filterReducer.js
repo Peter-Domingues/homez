@@ -4,7 +4,7 @@ const initialState = {
   propertyId: "",
   listingStatus: "All",
   propertyTypes: ["SingleFamilyResidence"],
-  priceRange: { min: 500000, max: 8000000 },
+  priceRange: { min: 0, max: 100000000 },
   bedrooms: 0,
   bathroms: 0,
   squirefeet: {},
@@ -12,7 +12,7 @@ const initialState = {
   city: "",
   filtersSelected: [
     { type: "PropertySubType", props: "SingleFamilyResidence" },
-    { type: "ListPrice", props: { min: 1000000, max: 8000001 } },
+    { type: "ListPrice", props: { min: 0, max: 100000000 } },
   ],
 };
 

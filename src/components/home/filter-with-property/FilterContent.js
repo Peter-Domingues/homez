@@ -11,6 +11,8 @@ import {
   changePriceRange,
   changePropertyId,
 } from "@/store/reducers/filterReducer";
+import { formattedPrice } from "@/helpers/priceHelper";
+import CurrencyInput from "react-currency-input-field";
 
 const FilterContent = () => {
   const dispatch = useDispatch();
@@ -88,6 +90,14 @@ const FilterContent = () => {
     return router.push("/listing");
   };
 
+  const converter = (price) => {
+    var formatted = parseFloat(price).toLocaleString("en-US", {
+      style: "currency",
+      currency: "US",
+    });
+    document.getElementById("priceInput").value = formatted;
+  };
+
   return (
     <div className="advance-style4 at-home5 mt-100 mt50-lg mb10 mx-auto animate-up-2">
       <ul className="nav nav-tabs p-0 m-0">
@@ -150,7 +160,8 @@ const FilterContent = () => {
                         data-bs-auto-close="outside"
                         style={{ fontSize: "13px" }}
                       >
-                        ${price.value.min} - ${price.value.max}{" "}
+                        {formattedPrice(price.value.min)} -{" "}
+                        {formattedPrice(price.value.max)}{" "}
                         <i className="fas fa-caret-down" />
                       </div>
                       <div className="dropdown-menu">
@@ -165,13 +176,36 @@ const FilterContent = () => {
                               id="slider"
                             />
                             <div className="d-flex align-items-center">
-                              <span id="slider-range-value1">
-                                ${price.value.min}
-                              </span>
+                              <CurrencyInput
+                                id="slider-range-value1"
+                                value={price.value.min}
+                                allowDecimals={false}
+                                onValueChange={(e) =>
+                                  handleOnChange({
+                                    min: e,
+                                    max: price.value.max,
+                                  })
+                                }
+                                prefix={"$"}
+                                step={10}
+                                decimalsLimit={2}
+                              />
                               <i className="fa-sharp fa-solid fa-minus mx-2 dark-color icon" />
-                              <span id="slider-range-value2">
-                                ${price.value.max}
-                              </span>
+
+                              <CurrencyInput
+                                id="slider-range-value2"
+                                value={price.value.max}
+                                allowDecimals={false}
+                                onValueChange={(e) =>
+                                  handleOnChange({
+                                    min: price.value.min,
+                                    max: e,
+                                  })
+                                }
+                                prefix={"$"}
+                                step={10}
+                                decimalsLimit={2}
+                              />
                             </div>
                           </div>
                         </div>

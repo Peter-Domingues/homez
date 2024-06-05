@@ -49,13 +49,14 @@ const FeaturedListings = ({ properties }) => {
                     alt="listings"
                   />
                   <div className="sale-sticker-wrap">
-                    {listing?.forRent && (
+                    {listing.PropertyType.includes("Lease") ? (
                       <div className="list-tag rounded-0 fz12">
                         <span className="flaticon-electricity" />
-                        FEATURED
+                        FOR RENT
                       </div>
+                    ) : (
+                      <div className="list-tag2 rounded-0 fz12">FOR SALE</div>
                     )}
-                    <div className="list-tag2 rounded-0 fz12">FOR SALE</div>
                   </div>
 
                   <div className="list-meta">
