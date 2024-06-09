@@ -12,6 +12,7 @@ const initialState = {
   city: "",
   filtersSelected: [
     { type: "PropertySubType", props: "SingleFamilyResidence" },
+    { type: "StandardStatus", props: "Active" },
     { type: "ListPrice", props: { min: 0, max: 100000000 } },
   ],
 };
