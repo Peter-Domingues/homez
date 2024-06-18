@@ -15,7 +15,7 @@ import CuratorWidget from "../common/curatorWidget";
 import Image from "next/image";
 import MyListings from "../myListings";
 
-export function HomeComponent() {
+export default function HomeComponent() {
   return (
     <Provider store={store}>
       <Header />
