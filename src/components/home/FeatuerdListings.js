@@ -68,7 +68,7 @@ const FeaturedListings = ({ properties }) => {
 
                   <div className="list-meta">
                     <a
-                      href={`/property-details/${listing.ListingKey}`}
+                      href={`/property-details/${listing.ListingId}`}
                       className="mr5"
                     >
                       <span className="flaticon-fullscreen" />

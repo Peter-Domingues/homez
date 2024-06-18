@@ -10,7 +10,7 @@ const FeaturedListings = ({ data, colstyle }) => {
       {data?.map((listing) => (
         <div
           className={` ${colstyle ? "col-sm-12" : "col-sm-6"}  `}
-          key={listing.ListingKey}
+          key={listing.ListingId}
         >
           <div
             className={
@@ -40,7 +40,7 @@ const FeaturedListings = ({ data, colstyle }) => {
               </div>
               <div className="list-meta">
                 <a
-                  href={`/property-details/${listing.ListingKey}`}
+                  href={`/property-details/${listing.ListingId}`}
                   className="mr5"
                 >
                   <span className="flaticon-fullscreen" />

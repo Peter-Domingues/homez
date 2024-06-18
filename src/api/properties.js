@@ -129,7 +129,7 @@ const fetchInfo = async (page, filters, rentOrSale, statusType, top) => {
 
 const fetchPropertieById = async (id) => {
   const xApiKey = process.env.REACT_APP_REALTY_X_API_KEY;
-  const url = `https://api.realtyfeed.com/reso/odata/Property('${id}')`;
+  const url = `https://api.realtyfeed.com/reso/odata/Property?filter=ListingId eq '${id}'`;
   const token = await getToken();
 
   const response = await fetch(url, {
