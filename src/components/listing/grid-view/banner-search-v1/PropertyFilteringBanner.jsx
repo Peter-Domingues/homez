@@ -21,6 +21,7 @@ import {
   changeZipCode,
   clearFilters,
 } from "@/store/reducers/filterReducer";
+import Link from "next/link";
 
 export default function PropertyFilteringBanner() {
   const dispatch = useDispatch();
@@ -216,8 +217,8 @@ export default function PropertyFilteringBanner() {
               <div className="breadcumb-style1">
                 <h2 className="title title-font">Miami</h2>
                 <div className="breadcumb-list">
-                  <a href="/">Home</a>
-                  <a href="#">Advanced Search</a>
+                  <Link href="/">Home</Link>
+                  <Link href="#">Advanced Search</Link>
                 </div>
               </div>
             </div>

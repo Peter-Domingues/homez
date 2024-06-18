@@ -1,6 +1,7 @@
 import { pageItems } from "@/data/navItems";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const MainMenu = () => {
   const pathname = usePathname();
@@ -8,14 +9,14 @@ const MainMenu = () => {
 
   useEffect(() => {
     pageItems.forEach((elm) => {
-      if (elm.href.split("/")[1] == pathname.split("/")[1]) {
+      if (elm.href.split("/")[1] == pathname?.split("/")[1]) {
         setTopMenu("pages");
       }
     });
   }, [pathname]);
 
   const handleActive = (link) => {
-    if (link.split("/")[1] == pathname.split("/")[1]) {
+    if (link.split("/")[1] == pathname?.split("/")[1]) {
       return "menuActive";
     }
   };
@@ -23,7 +24,7 @@ const MainMenu = () => {
   return (
     <ul className="ace-responsive-menu">
       <li className="visible_list dropitem">
-        <a className="list-item" href="/">
+        <Link className="list-item" href="/">
           <span
             className={
               topMenu == "home" ? "title menuActive" : "title menu-item"
@@ -31,11 +32,11 @@ const MainMenu = () => {
           >
             HOME
           </span>
-        </a>
+        </Link>
       </li>
 
       <li className="visible_list dropitem">
-        <a className="list-item" href="/#featured">
+        <Link className="list-item" href="/#featured">
           <span
             className={
               topMenu == "featured" ? "title menuActive" : "title menu-item"
@@ -43,10 +44,10 @@ const MainMenu = () => {
           >
             FEATURED PROPERTIES
           </span>
-        </a>
+        </Link>
       </li>
       <li className="visible_list dropitem">
-        <a className="list-item" href="/#mylistings">
+        <Link className="list-item" href="/#mylistings">
           <span
             className={
               topMenu == "mylistings" ? "title menuActive" : "title menu-item"
@@ -54,11 +55,11 @@ const MainMenu = () => {
           >
             MY LISTINGS
           </span>
-        </a>
+        </Link>
       </li>
 
       <li className="visible_list dropitem">
-        <a className="list-item" href="/#new">
+        <Link className="list-item" href="/#new">
           <span
             className={
               topMenu == "new" ? "title menuActive" : "title menu-item"
@@ -66,11 +67,11 @@ const MainMenu = () => {
           >
             PRE-CONSTRUCTION
           </span>
-        </a>
+        </Link>
       </li>
 
       <li className="megamenu_style dropitem">
-        <a className="list-item" href="/listing">
+        <Link className="list-item" href="/listing">
           <span
             className={
               topMenu == "listing" ? "title menuActive" : "title menu-item"
@@ -78,11 +79,11 @@ const MainMenu = () => {
           >
             ADVANCED SEARCH
           </span>
-        </a>
+        </Link>
       </li>
 
       <li className="visible_list dropitem">
-        <a className="list-item" href="/#sold">
+        <Link className="list-item" href="/#sold">
           <span
             className={
               topMenu == "sold" ? "title menuActive" : "title menu-item"
@@ -90,10 +91,10 @@ const MainMenu = () => {
           >
             SOLD
           </span>
-        </a>
+        </Link>
       </li>
       <li className="visible_list dropitem">
-        <a className="list-item" href="/about">
+        <Link className="list-item" href="/about">
           <span
             className={
               topMenu == "about" ? "title menuActive" : "title menu-item"
@@ -101,10 +102,10 @@ const MainMenu = () => {
           >
             ABOUT ME
           </span>
-        </a>
+        </Link>
       </li>
       <li className="visible_list dropitem">
-        <a className="list-item" href="/contact">
+        <Link className="list-item" href="/contact">
           <span
             className={
               topMenu == "about" ? "title menuActive" : "title menu-item"
@@ -112,7 +113,7 @@ const MainMenu = () => {
           >
             CONTACT
           </span>
-        </a>
+        </Link>
       </li>
     </ul>
   );

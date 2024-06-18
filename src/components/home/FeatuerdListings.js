@@ -49,7 +49,14 @@ const FeaturedListings = ({ properties }) => {
                     alt="listings"
                   />
                   <div className="sale-sticker-wrap">
-                    {listing.PropertyType.includes("Lease") ? (
+                    {listing.StandardStatus !== "Active" ? (
+                      <div
+                        className="list-tag rounded-0 fz12"
+                        style={{ backgroundColor: "#bc2423" }}
+                      >
+                        CLOSED
+                      </div>
+                    ) : listing.PropertyType.includes("Lease") ? (
                       <div className="list-tag rounded-0 fz12">
                         <span className="flaticon-electricity" />
                         FOR RENT

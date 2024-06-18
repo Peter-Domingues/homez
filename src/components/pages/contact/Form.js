@@ -1,8 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
+import emailjs, { EmailJSResponseStatus } from "emailjs-com";
 
 const Form = () => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    message: "",
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_ic6nnya",
+        "template_9jh3w8b",
+        e.target,
+        "a2t5nO1ZiwZKRfq-0"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Message sent successfully!");
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Failed to send message. Please try again later.");
+        }
+      );
+
+    setFormData({
+      firstName: "",
+      lastName: "",
+      email: "",
+      message: "",
+    });
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
   return (
-    <form className="form-style1">
+    <form className="form-style1" onSubmit={handleSubmit}>
       <div className="row">
         <div className="col-lg-12">
           <div className="mb20">
@@ -10,10 +55,13 @@ const Form = () => {
               First Name
             </label>
             <input
+              value={formData.firstName}
               type="text"
               className="form-control"
               placeholder="Your First Name"
               required
+              name="firstName"
+              onChange={handleChange}
             />
           </div>
         </div>
@@ -25,10 +73,13 @@ const Form = () => {
               Last Name
             </label>
             <input
+              value={formData.lastName}
               type="text"
+              name="lastName"
               className="form-control"
               placeholder="Your Last Name"
               required
+              onChange={handleChange}
             />
           </div>
         </div>
@@ -38,10 +89,13 @@ const Form = () => {
           <div className="mb20">
             <label className="heading-color ff-heading fw600 mb10">Email</label>
             <input
+              value={formData.email}
+              name="email"
               type="email"
               className="form-control"
               placeholder="Your Email"
               required
+              onChange={handleChange}
             />
           </div>
         </div>
@@ -53,11 +107,14 @@ const Form = () => {
               Message
             </label>
             <textarea
+              value={formData.message}
+              name="message"
               cols={30}
               rows={4}
               placeholder="Type your message here..."
               defaultValue={""}
               required
+              onChange={handleChange}
             />
           </div>
         </div>

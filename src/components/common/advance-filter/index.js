@@ -12,6 +12,7 @@ import {
   changeFiltersSelected,
   changePriceRange,
   changePropertyId,
+  changePropertyTypes,
   changeSquirefeet,
   changeZipCode,
 } from "@/store/reducers/filterReducer";
@@ -46,7 +47,8 @@ const AdvanceFilterModal = () => {
   };
 
   const addOrRemoveFilters = (type, value) => {
-    if (value === "") {
+    console.log(value);
+    if (value === "" || value === undefined) {
       const newFilters = filters.filtersSelected.filter((e) => e.type !== type);
       return dispatch(changeFiltersSelected(newFilters));
     }
@@ -99,8 +101,9 @@ const AdvanceFilterModal = () => {
   };
 
   const handlePropertyType = (elm) => {
-    addOrRemoveFilters("City", elm);
-    dispatch(changeCity(elm));
+    console.log(elm);
+    addOrRemoveFilters("PropertySubType", elm);
+    dispatch(changePropertyTypes(elm));
   };
 
   const filterFunctions = {
@@ -110,6 +113,7 @@ const AdvanceFilterModal = () => {
     handlepriceRange,
     handlebathroms,
     handlesquirefeet,
+    handlePropertyType,
     bathroms: filters.bathroms,
     bedrooms: filters.bedrooms,
     priceRange: filters.priceRange,
@@ -158,7 +162,7 @@ const AdvanceFilterModal = () => {
                     className="select-custom"
                     classNamePrefix="select"
                     required
-                    onChange={(e) => handlePropertyType(e.target.value)}
+                    onChange={(e) => handlePropertyType(e.value)}
                   />
                 </div>
               </div>

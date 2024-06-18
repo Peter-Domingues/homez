@@ -3,13 +3,19 @@ import Image from "next/image";
 const Sold = () => {
   const soldMock = [
     {
-      Media: "/images/a.jpg",
+      Media: "/images/2.png",
     },
     {
-      Media: "/images/b.jpg",
+      Media: "/images/3.png",
     },
     {
-      Media: "/images/c.jpg",
+      Media: "/images/4.png",
+    },
+    {
+      Media: "/images/5.png",
+    },
+    {
+      Media: "/images/6.png",
     },
   ];
   return (
@@ -35,6 +41,7 @@ const Sold = () => {
                     className="w-100 h-100 cover"
                     src={apartment?.Media}
                     alt="city listing"
+                    style={{ objectPosition: "bottom" }}
                   />
                 </div>
               </div>

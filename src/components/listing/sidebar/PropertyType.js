@@ -16,7 +16,7 @@ const PropertyType = ({ filterFunctions }) => {
         All
         <input
           type="checkbox"
-          checked={!filterFunctions?.propertyTypes.length}
+          checked={!filterFunctions?.propertyTypes?.length}
           onChange={(e) => {
             filterFunctions.handlepropertyTypes("");
           }}

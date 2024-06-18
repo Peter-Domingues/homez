@@ -90,7 +90,7 @@ const DashboardHeader = () => {
                   </div>
                   {/* End Logo */}
 
-                  <a
+                  <Link
                     className="dashboard_sidebar_toggle_icon text-thm1 vam"
                     href="#"
                     data-bs-toggle="offcanvas"
@@ -104,7 +104,7 @@ const DashboardHeader = () => {
                       src="/images/dark-nav-icon.svg"
                       alt="humberger menu"
                     />
-                  </a>
+                  </Link>
                 </div>
               </div>
               {/* End .col-auto */}
@@ -126,22 +126,26 @@ const DashboardHeader = () => {
                     {/* End email box */}
 
                     <li className="d-none d-sm-block">
-                      <a className="text-center mr20 notif" href="#">
+                      <Link className="text-center mr20 notif" href="#">
                         <span className="flaticon-bell" />
-                      </a>
+                      </Link>
                     </li>
                     {/* End notification icon */}
 
                     <li className=" user_setting">
                       <div className="dropdown">
-                        <a className="btn" href="#" data-bs-toggle="dropdown">
+                        <Link
+                          className="btn"
+                          href="#"
+                          data-bs-toggle="dropdown"
+                        >
                           <Image
                             width={44}
                             height={44}
                             src="/images/resource/user.png"
                             alt="user.png"
                           />
-                        </a>
+                        </Link>
                         <div className="dropdown-menu">
                           <div className="user_setting_content">
                             {menuItems.map((section, sectionIndex) => (

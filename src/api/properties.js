@@ -31,6 +31,18 @@ const getToken = async () => {
   }
 };
 
+const mapPropertySubTypes = (subTypes) => {
+  let newArray = [];
+  if (subTypes.length > 1) {
+    subTypes.map((subType, index) => {
+      if (index === 0) newArray = [...newArray, `'${subType}'`];
+      newArray = [...newArray, ` '${subType}'`];
+    });
+    return `in (${newArray})`;
+  }
+  return `eq '${subTypes[0]}'`;
+};
+
 const fetchInfo = async (page, filters, rentOrSale, statusType, top) => {
   const xApiKey = process.env.REACT_APP_REALTY_X_API_KEY;
   const skip = page ? "&$skip=" + page : "";
@@ -40,7 +52,6 @@ const fetchInfo = async (page, filters, rentOrSale, statusType, top) => {
 
     filtersSelected.map((filter, index) => {
       let urlFilter;
-
       if (index === 0) {
         urlFilter =
           filter.type === "ListPrice" ||
@@ -49,6 +60,8 @@ const fetchInfo = async (page, filters, rentOrSale, statusType, top) => {
             ? `&$filter=${filter.type} gt ${filter.props.min || 10} and ${
                 filter.type
               } lt ${filter.props.max}`
+            : filter.type === "PropertySubType"
+            ? `&$filter=${filter.type} eq ('${filter.props}')`
             : `&$filter=${filter.type} eq '${filter.props}'`;
 
         finalUrl = finalUrl + urlFilter;
@@ -59,6 +72,8 @@ const fetchInfo = async (page, filters, rentOrSale, statusType, top) => {
         filter.type === "LivingArea" ||
         filter.type === "YearBuilt"
           ? ` and ${filter.type} gt ${filter.props.min} and ${filter.type} lt ${filter.props.max}`
+          : filter.type === "PropertySubType"
+          ? ` and ${filter.type} ${mapPropertySubTypes(filter.props)}`
           : ` and ${filter.type} eq '${filter.props}'`;
 
       finalUrl = finalUrl + urlFilter;
@@ -160,9 +175,26 @@ const fetchMember = async (id) => {
   return data;
 };
 
+const fetchSold = async (id) => {
+  const xApiKey = process.env.REACT_APP_REALTY_X_API_KEY;
+  const url = `https://api.realtyfeed.com/reso/odata/Property?filter=ListAgentMlsId eq '3535815' and StandardStatus ne 'Active'&$orderby=ListPrice desc`;
+  const token = await getToken();
+
+  const response = await fetch(url, {
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${token}`,
+      "x-api-key": xApiKey,
+    },
+  });
+  const data = await response.json();
+  return data;
+};
+
 export {
   fetchInfo,
   fetchPropertieById,
   fetchPropertieByPriceRange,
   fetchMember,
+  fetchSold,
 };
