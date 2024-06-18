@@ -40,7 +40,7 @@ const FeaturedListings = ({ data, colstyle }) => {
               </div>
               <div className="list-meta">
                 <a
-                  href={`/property-details/${listing.ListingKey}`}
+                  href={`/propertydetails/${listing.ListingKey}`}
                   className="mr5"
                 >
                   <span className="flaticon-fullscreen" />

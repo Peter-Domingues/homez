@@ -21,7 +21,7 @@ const PropertyInfoComponent = () => {
   const getPropertiesById = useCallback(async (id) => {
     setLoading(true);
 
-    await fetchPropertieById(params.id)
+    await fetchPropertieById(params?.id)
       .then((response) => {
         console.log(response);
         setData(response);
@@ -54,7 +54,7 @@ const PropertyInfoComponent = () => {
       {/* Property All Single V4 */}
       <section className="pt30 pb90 bgc-f7 paddingHorizontal">
         <div className="container">
-          <div className="row sp-v5-property-details pl50 pr50">
+          <div className="row sp-v5-propertydetails pl50 pr50">
             <PropertyHeader data={data} />
           </div>
           {/* End .row */}

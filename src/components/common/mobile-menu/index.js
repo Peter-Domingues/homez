@@ -23,10 +23,7 @@ const MobileMenu = () => {
                 ></span>
               </a>
               <div style={{ display: "flex", flexDirection: "column" }}>
-                <h3
-                  className="title-font"
-                  style={{ fontSize: "x-small", marginTop: "8px" }}
-                >
+                <h3 className=" title-font logo-font" style={{}}>
                   Anastasia Benedeti
                 </h3>
                 <h3 style={{ fontSize: "8px" }}>Real Estate Associate</h3>

@@ -2,9 +2,19 @@
 const nextConfig = {
   reactStrictMode: false,
   swcMinify: false,
+  async rewrites() {
+    return [
+      {
+        source: "/propertydetails/:id",
+        destination: "/propertydetails/:id",
+        locale: false,
+      },
+    ];
+  },
 };
 
 module.exports = {
+  output: "export",
   nextConfig,
   env: {
     REACT_APP_REALTY_X_API_KEY: process.env.REACT_APP_REALTY_X_API_KEY,
@@ -13,5 +23,6 @@ module.exports = {
   },
   images: {
     domains: ["dx41nk9nsacii.cloudfront.net"],
+    unoptimized: true,
   },
 };

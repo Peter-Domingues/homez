@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import InputRange from "react-input-range";
 import "react-input-range/lib/css/index.css";
@@ -86,7 +86,7 @@ const FilterContent = () => {
 
   const handleSearch = () => {
     if (filters.propertyId)
-      return router.push(`/property-details/${filters.propertyId}`);
+      return router.push(`/propertydetails/${filters.propertyId}`);
     return router.push("/listing");
   };
 

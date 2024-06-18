@@ -7,21 +7,24 @@ import PropertyAddress from "@/components/property/property-single-style/common/
 import PropertyDetails from "@/components/property/property-single-style/common/PropertyDetails";
 import PropertyHeader from "@/components/property/property-single-style/single-v4/PropertyHeader";
 import ProperytyDescriptions from "@/components/property/property-single-style/common/ProperytyDescriptions";
-import PropertyGallery from "@/components/property/property-single-style/single-v5/property-gallery";
 import { useParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { fetchPropertieById } from "@/api/properties";
 import InfoWithForm from "@/components/property/property-single-style/common/more-info";
+import PropertyGallery from "@/components/propertyInfo/PropertyGallery";
+import { useRouter } from "next/router";
 
 const PropertyInfoComponent = () => {
   const params = useParams();
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState({});
+  const router = useRouter();
+  const routerId = router.query.id;
 
   const getPropertiesById = useCallback(async (id) => {
     setLoading(true);
 
-    await fetchPropertieById(params.id)
+    await fetchPropertieById(id)
       .then((response) => {
         console.log(response);
         setData(response);
@@ -31,9 +34,12 @@ const PropertyInfoComponent = () => {
       });
   }, []);
 
+  console.log(params?.id);
+
   useEffect(() => {
-    getPropertiesById();
-  }, []);
+    if (!params?.id) <h1>Loading...</h1>;
+    else getPropertiesById(params.id);
+  }, [params?.id]);
 
   return (
     <>
@@ -46,7 +52,7 @@ const PropertyInfoComponent = () => {
       {/* End Mobile Nav  */}
 
       {/* Property Slider Gallery */}
-      <div className="row mb30 mt30">
+      <div className="row mt30">
         <PropertyGallery data={data} />
       </div>
       {/* End Property Slider Gallery */}
@@ -105,6 +111,8 @@ const PropertyInfoComponent = () => {
         {/* End .container */}
       </section>
       {/* End Property All Single V4  */}
+
+      {/* Start similar-items  */}
 
       {/* Start Our Footer */}
       <section className="footer-style1 pt60 pb-0">

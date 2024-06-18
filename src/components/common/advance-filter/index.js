@@ -47,7 +47,6 @@ const AdvanceFilterModal = () => {
   };
 
   const addOrRemoveFilters = (type, value) => {
-    console.log(value);
     if (value === "" || value === undefined) {
       const newFilters = filters.filtersSelected.filter((e) => e.type !== type);
       return dispatch(changeFiltersSelected(newFilters));
@@ -101,7 +100,6 @@ const AdvanceFilterModal = () => {
   };
 
   const handlePropertyType = (elm) => {
-    console.log(elm);
     addOrRemoveFilters("PropertySubType", elm);
     dispatch(changePropertyTypes(elm));
   };
