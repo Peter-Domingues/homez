@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import emailjs, { EmailJSResponseStatus } from "emailjs-com";
 
@@ -29,7 +30,6 @@ const Form = () => {
           alert("Failed to send message. Please try again later.");
         }
       );
-
     setFormData({
       firstName: "",
       lastName: "",
