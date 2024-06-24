@@ -10,12 +10,12 @@ const PropertyGallery = ({ data }) => {
         <div className="col-sm-6">
           <div className="sp-img-content mb15-md">
             <div className="popup-img preview-img-1 sp-img">
-              {data.Media && (
+              {data?.Media && (
                 <Item
                   original={data?.Media[0]?.Thumbnail}
                   thumbnail={data?.Media[0]?.Thumbnail}
-                  width={610}
-                  height={510}
+                  width={1600}
+                  height={1066}
                 >
                   {({ ref, open }) => (
                     <Image
@@ -39,7 +39,7 @@ const PropertyGallery = ({ data }) => {
         <div className="col-sm-6" style={{ height: "280px !important" }}>
           <div className="row">
             {data &&
-              data.Media?.slice(0, 4).map((image, index) => (
+              data?.Media?.slice(0, 4).map((image, index) => (
                 <div className="col-6 ps-sm-0" key={index}>
                   <div className="sp-img-content">
                     <div
@@ -50,8 +50,8 @@ const PropertyGallery = ({ data }) => {
                       <Item
                         original={image.Thumbnail}
                         thumbnail={image.Thumbnail}
-                        width={270}
-                        height={250}
+                        width={1600}
+                        height={1066}
                       >
                         {({ ref, open }) => (
                           <Image

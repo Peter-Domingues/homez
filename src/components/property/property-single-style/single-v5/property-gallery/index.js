@@ -18,7 +18,7 @@ const PropertyGallery = ({ data }) => {
               <div className="row" data-aos="fade-up" data-aos-delay="300">
                 <div className="col-lg-12">
                   <div className="ps-v4-hero-slider-2">
-                    <GalleryBox images={data.Media} />
+                    <GalleryBox images={data?.Media} />
                   </div>
                 </div>
               </div>

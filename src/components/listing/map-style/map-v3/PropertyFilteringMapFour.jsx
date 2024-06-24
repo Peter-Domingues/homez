@@ -22,12 +22,12 @@ export default function PropertyFilteringMapFour() {
 
   useEffect(() => {
     setPageItems(
-      sortedFilteredData.slice((pageNumber - 1) * 4, pageNumber * 4)
+      sortedFiltereddata?.slice((pageNumber - 1) * 4, pageNumber * 4)
     );
     setPageContentTrac([
       (pageNumber - 1) * 4 + 1,
       pageNumber * 4,
-      sortedFilteredData.length,
+      sortedFiltereddata?.length,
     ]);
   }, [pageNumber, sortedFilteredData]);
 

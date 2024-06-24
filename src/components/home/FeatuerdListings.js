@@ -67,12 +67,14 @@ const FeaturedListings = ({ properties }) => {
                   </div>
 
                   <div className="list-meta">
-                    <a
+                    <Link
+                      className="ud-btn2"
+                      style={{ display: "contents", color: "white" }}
                       href={`/property-details/${listing.ListingId}`}
-                      className="mr5"
                     >
-                      <span className="flaticon-fullscreen" />
-                    </a>
+                      See Details
+                      <i className="fal fa-arrow-right-long" />
+                    </Link>
                   </div>
                 </div>
                 <div className="list-content">

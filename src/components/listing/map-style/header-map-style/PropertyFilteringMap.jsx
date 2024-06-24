@@ -24,12 +24,12 @@ export default function PropertyFilteringMap() {
 
   useEffect(() => {
     setPageItems(
-      sortedFilteredData.slice((pageNumber - 1) * 9, pageNumber * 9)
+      sortedFiltereddata?.slice((pageNumber - 1) * 9, pageNumber * 9)
     );
     setPageContentTrac([
       (pageNumber - 1) * 9 + 1,
       pageNumber * 9,
-      sortedFilteredData.length,
+      sortedFiltereddata?.length,
     ]);
   }, [pageNumber, sortedFilteredData]);
 

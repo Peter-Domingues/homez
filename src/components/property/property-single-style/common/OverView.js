@@ -6,40 +6,40 @@ const OverView = ({ data }) => {
     {
       icon: "flaticon-bed",
       label: "Bedroom",
-      value: data.BedroomsTotal,
+      value: data?.BedroomsTotal,
     },
     {
       icon: "flaticon-shower",
       label: "Bath",
-      value: data.BathroomsTotalInteger,
+      value: data?.BathroomsTotalInteger,
     },
     {
       icon: "flaticon-event",
       label: "Year Built",
-      value: data.YearBuilt,
+      value: data?.YearBuilt,
     },
     {
       icon: "flaticon-garage",
       label: "Garage",
-      value: data.GarageSpaces,
+      value: data?.GarageSpaces,
       xs: true,
     },
     {
       icon: "flaticon-expand",
       label: "Sqft",
-      value: data.LotSizeSquareFeet,
+      value: data?.LotSizeSquareFeet,
       xs: true,
     },
     {
       icon: "flaticon-home-1",
       label: "Property Type",
-      value: data.PropertyType,
+      value: data?.PropertyType,
     },
   ];
 
   return (
     <>
-      {overviewData.map((item, index) => (
+      {overviewData?.map((item, index) => (
         <div
           key={index}
           className={`col-sm-6 col-lg-4 ${item.xs ? "mb25-xs" : "mb25"}`}

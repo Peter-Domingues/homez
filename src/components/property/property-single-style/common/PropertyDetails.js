@@ -6,38 +6,38 @@ const PropertyDetails = ({ data }) => {
     [
       {
         label: "MLS #",
-        value: data.ListingKey,
+        value: data?.ListingId,
       },
       {
         label: "Price",
-        value: formattedPrice(data.ListPrice),
+        value: formattedPrice(data?.ListPrice),
       },
       {
         label: "Property Size",
-        value: `${data.LotSizeSquareFeet} Sq Ft`,
+        value: `${data?.LotSizeSquareFeet} Sq Ft`,
       },
       {
         label: "Bathrooms",
-        value: data.BathroomsTotalInteger,
+        value: data?.BathroomsTotalInteger,
       },
       {
         label: "Bedrooms",
-        value: data.BedroomsTotal,
+        value: data?.BedroomsTotal,
       },
     ],
     [
       {
         label: "Garage",
-        value: data.GarageSpaces,
+        value: data?.GarageSpaces,
       },
 
       {
         label: "Year Built",
-        value: data.YearBuilt,
+        value: data?.YearBuilt,
       },
       {
         label: "Property Type",
-        value: data.PropertyType,
+        value: data?.PropertyType,
       },
       {
         label: "Property Status",

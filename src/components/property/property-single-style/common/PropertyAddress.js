@@ -3,8 +3,8 @@ import React from "react";
 const PropertyAddress = ({ data }) => {
   const addresses = [
     {
-      address: data.UnparsedAddress,
-      city: data.City,
+      address: data?.UnparsedAddress,
+      city: data?.City,
     },
   ];
 

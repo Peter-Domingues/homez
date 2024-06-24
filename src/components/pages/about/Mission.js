@@ -14,7 +14,7 @@ const Mission = () => {
 
   return (
     <>
-      {missionData.map((item, index) => (
+      {missiondata?.map((item, index) => (
         <div className="col-sm-6" key={index}>
           <div className="why-chose-list style3">
             <div className="list-one mb30">

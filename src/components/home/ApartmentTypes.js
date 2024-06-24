@@ -32,7 +32,7 @@ const ApartmentTypes = ({ data, loading, columns }) => {
                 <div className="bottom-area">
                   <Link
                     className="ud-btn2"
-                    href={`/property-details/${apartment.ListingKey}`}
+                    href={`/property-details/${apartment.ListingId}`}
                   >
                     See Details
                     <i className="fal fa-arrow-right-long" />

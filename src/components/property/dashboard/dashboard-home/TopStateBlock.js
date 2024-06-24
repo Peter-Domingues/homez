@@ -26,15 +26,15 @@ const statisticsData = [
 const TopStateBlock = () => {
   return (
     <>
-      {statisticsData.map((data, index) => (
+      {statisticsdata?.map((data, index) => (
         <div key={index} className="col-sm-6 col-xxl-3">
           <div className="d-flex justify-content-between statistics_funfact">
             <div className="details">
-              <div className="text fz25">{data.text}</div>
-              <div className="title">{data.title}</div>
+              <div className="text fz25">{data?.text}</div>
+              <div className="title">{data?.title}</div>
             </div>
             <div className="icon text-center">
-              <i className={data.icon} />
+              <i className={data?.icon} />
             </div>
           </div>
         </div>

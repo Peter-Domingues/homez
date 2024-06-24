@@ -78,7 +78,7 @@ const PropertyDataTable = () => {
         </tr>
       </thead>
       <tbody className="t-body">
-        {propertyData.map((property) => (
+        {propertydata?.map((property) => (
           <tr key={property.id}>
             <th scope="row">
               <div className="listing-style1 dashboard-style d-xxl-flex align-items-center mb-0">
@@ -93,7 +93,9 @@ const PropertyDataTable = () => {
                 </div>
                 <div className="list-content py-0 p-0 mt-2 mt-xxl-0 ps-xxl-4">
                   <div className="h6 list-title">
-                    <Link href={`/single-v1/${property.id}`}>{property.title}</Link>
+                    <Link href={`/single-v1/${property.id}`}>
+                      {property.title}
+                    </Link>
                   </div>
                   <p className="list-text mb-0">{property.location}</p>
                   <div className="list-price">

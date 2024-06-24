@@ -34,7 +34,7 @@ const Testimonial = () => {
           },
         }}
       >
-        {testimonialData.map((testimonial) => (
+        {testimonialdata?.map((testimonial) => (
           <SwiperSlide key={testimonial.id}>
             <div className="item">
               <div className="testimonial-style3 mt-1 mx-1 position-relative mb60">

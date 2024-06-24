@@ -55,7 +55,7 @@ const Form = () => {
               First Name
             </label>
             <input
-              value={formData.firstName}
+              value={formdata?.firstName}
               type="text"
               className="form-control"
               placeholder="Your First Name"
@@ -73,7 +73,7 @@ const Form = () => {
               Last Name
             </label>
             <input
-              value={formData.lastName}
+              value={formdata?.lastName}
               type="text"
               name="lastName"
               className="form-control"
@@ -89,7 +89,7 @@ const Form = () => {
           <div className="mb20">
             <label className="heading-color ff-heading fw600 mb10">Email</label>
             <input
-              value={formData.email}
+              value={formdata?.email}
               name="email"
               type="email"
               className="form-control"
@@ -107,7 +107,7 @@ const Form = () => {
               Message
             </label>
             <textarea
-              value={formData.message}
+              value={formdata?.message}
               name="message"
               cols={30}
               rows={4}

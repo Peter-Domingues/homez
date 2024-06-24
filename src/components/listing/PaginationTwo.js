@@ -15,7 +15,7 @@ const PaginationTwo = ({
     }
   };
   const handleNext = () => {
-    if (Math.ceil(data.length / pageCapacity) > pageNumber) {
+    if (Math.ceil(data?.length / pageCapacity) > pageNumber) {
       setPageNumber((pre) => pre + 1);
     }
   };
@@ -36,7 +36,7 @@ const PaginationTwo = ({
         >
           <span className="page-link pointer">1</span>
         </li>
-        {data.length > pageCapacity ? (
+        {data?.length > pageCapacity ? (
           <li
             onClick={() => setPageNumber(2)}
             className={pageNumber == 2 ? "active page-item" : "page-item"}
@@ -47,7 +47,7 @@ const PaginationTwo = ({
         ) : (
           ""
         )}
-        {data.length > pageCapacity * 2 ? (
+        {data?.length > pageCapacity * 2 ? (
           <li
             onClick={() => setPageNumber(3)}
             className={pageNumber == 3 ? "active page-item" : "page-item"}
@@ -59,29 +59,33 @@ const PaginationTwo = ({
           ""
         )}
 
-        {data.length > pageCapacity * 4 && pageNumber != 4 && <span>...</span>}
+        {data?.length > pageCapacity * 4 && pageNumber != 4 && <span>...</span>}
         {pageNumber > 3 &&
-        Math.ceil(data.length / pageCapacity) != pageNumber ? (
+        Math.ceil(data?.length / pageCapacity) != pageNumber ? (
           <li
             className={"active page-item"}
-            onClick={() => setPageNumber(Math.ceil(data.length / pageCapacity))}
+            onClick={() =>
+              setPageNumber(Math.ceil(data?.length / pageCapacity))
+            }
           >
             <span className="page-link pointer">{pageNumber}</span>
           </li>
         ) : (
           ""
         )}
-        {data.length > pageCapacity * 4 ? (
+        {data?.length > pageCapacity * 4 ? (
           <li
             className={
-              pageNumber == Math.ceil(data.length / pageCapacity)
+              pageNumber == Math.ceil(data?.length / pageCapacity)
                 ? "active page-item"
                 : "page-item"
             }
-            onClick={() => setPageNumber(Math.ceil(data.length / pageCapacity))}
+            onClick={() =>
+              setPageNumber(Math.ceil(data?.length / pageCapacity))
+            }
           >
             <span className="page-link pointer">
-              {Math.ceil(data.length / pageCapacity)}
+              {Math.ceil(data?.length / pageCapacity)}
             </span>
           </li>
         ) : (

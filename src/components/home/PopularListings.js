@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 
-const PopularListings = ({data}) => {
+const PopularListings = ({ data }) => {
   return (
     <>
       <Swiper
@@ -27,7 +27,7 @@ const PopularListings = ({data}) => {
           },
         }}
       >
-        {data.slice(0, 8).map((listing) => (
+        {data?.slice(0, 8).map((listing) => (
           <SwiperSlide key={listing.id}>
             <div className="item">
               <div className="listing-style1">
