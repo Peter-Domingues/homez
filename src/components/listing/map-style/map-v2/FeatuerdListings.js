@@ -44,7 +44,7 @@ const FeaturedListings = ({ data, colstyle }) => {
 
   return (
     <>
-      {apartmentdata?.map((listing) => (
+      {apartmentData?.map((listing) => (
         <div
           className={` ${colstyle ? "col-sm-12" : "col-sm-12 col-lg-6 "}  `}
           key={listing.id}

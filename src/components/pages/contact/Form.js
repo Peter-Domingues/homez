@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import emailjs, { EmailJSResponseStatus } from "emailjs-com";
 
 const Form = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setformData] = useState({
     firstName: "",
     lastName: "",
     email: "",
@@ -30,7 +30,7 @@ const Form = () => {
           alert("Failed to send message. Please try again later.");
         }
       );
-    setFormData({
+    setformData({
       firstName: "",
       lastName: "",
       email: "",
@@ -40,7 +40,7 @@ const Form = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({
+    setformData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
@@ -55,7 +55,7 @@ const Form = () => {
               First Name
             </label>
             <input
-              value={formdata?.firstName}
+              value={formData?.firstName}
               type="text"
               className="form-control"
               placeholder="Your First Name"
@@ -73,7 +73,7 @@ const Form = () => {
               Last Name
             </label>
             <input
-              value={formdata?.lastName}
+              value={formData?.lastName}
               type="text"
               name="lastName"
               className="form-control"
@@ -89,7 +89,7 @@ const Form = () => {
           <div className="mb20">
             <label className="heading-color ff-heading fw600 mb10">Email</label>
             <input
-              value={formdata?.email}
+              value={formData?.email}
               name="email"
               type="email"
               className="form-control"
@@ -107,7 +107,7 @@ const Form = () => {
               Message
             </label>
             <textarea
-              value={formdata?.message}
+              value={formData?.message}
               name="message"
               cols={30}
               rows={4}

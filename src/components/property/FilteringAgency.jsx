@@ -10,7 +10,7 @@ import AllAgents from "./agency/AllAgency";
 export default function FilteringAgency() {
   const [filteredData, setFilteredData] = useState([]);
   const [currentSortingOption, setCurrentSortingOption] = useState("Newest");
-  const [sortedFilteredData, setSortedFilteredData] = useState([]);
+  const [sortedFilteredData, setsortedFilteredData] = useState([]);
   const [pageNumber, setPageNumber] = useState(1);
   const [pageItems, setPageItems] = useState([]);
   const [pageContentTrac, setPageContentTrac] = useState([]);
@@ -22,7 +22,7 @@ export default function FilteringAgency() {
     setPageContentTrac([
       (pageNumber - 1) * 14 + 1,
       pageNumber * 14,
-      sortedFiltereddata?.length,
+      sortedFilteredData?.length,
     ]);
   }, [pageNumber, sortedFilteredData]);
   const [propertyTypes, setPropertyTypes] = useState([]);
@@ -97,7 +97,7 @@ export default function FilteringAgency() {
 
   useEffect(() => {
     setPageNumber(1);
-    setSortedFilteredData(filteredData);
+    setsortedFilteredData(filteredData);
   }, [filteredData, currentSortingOption]);
 
   return (

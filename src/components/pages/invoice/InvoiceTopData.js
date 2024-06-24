@@ -30,7 +30,7 @@ const InvoiceTopData = () => {
 
   return (
     <>
-      {invoicedata?.map((data, index) => (
+      {invoiceData?.map((data, index) => (
         <div className={data?.columns} key={index}>
           <div className="invoice_date mb60">
             <div className="title mb5 ff-heading">{data?.title}</div>

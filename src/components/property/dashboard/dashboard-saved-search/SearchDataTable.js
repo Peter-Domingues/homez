@@ -60,7 +60,7 @@ const SearchDataTable = () => {
         </tr>
       </thead>
       <tbody className="t-body">
-        {listingdata?.map((listing, index) => (
+        {listingData?.map((listing, index) => (
           <tr key={index}>
             <th scope="row">{listing.title}</th>
             <td>{listing.date}</td>

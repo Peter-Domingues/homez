@@ -18,7 +18,7 @@ const InvoiceFooter = () => {
 
   return (
     <>
-      {footerdata?.map((data, index) => (
+      {footerData?.map((data, index) => (
         <div className="col-auto" key={index}>
           <div className="invoice_footer_content text-center">
             <a className="ff-heading" href={data?.link}>

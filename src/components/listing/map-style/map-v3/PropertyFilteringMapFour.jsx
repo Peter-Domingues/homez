@@ -13,7 +13,7 @@ export default function PropertyFilteringMapFour() {
 
   const [currentSortingOption, setCurrentSortingOption] = useState("Newest");
 
-  const [sortedFilteredData, setSortedFilteredData] = useState([]);
+  const [sortedFilteredData, setsortedFilteredData] = useState([]);
 
   const [pageNumber, setPageNumber] = useState(1);
   const [colstyle, setColstyle] = useState(false);
@@ -22,12 +22,12 @@ export default function PropertyFilteringMapFour() {
 
   useEffect(() => {
     setPageItems(
-      sortedFiltereddata?.slice((pageNumber - 1) * 4, pageNumber * 4)
+      sortedFilteredData?.slice((pageNumber - 1) * 4, pageNumber * 4)
     );
     setPageContentTrac([
       (pageNumber - 1) * 4 + 1,
       pageNumber * 4,
-      sortedFiltereddata?.length,
+      sortedFilteredData?.length,
     ]);
   }, [pageNumber, sortedFilteredData]);
 
@@ -238,23 +238,23 @@ export default function PropertyFilteringMapFour() {
       const sorted = [...filteredData].sort(
         (a, b) => a.yearBuilding - b.yearBuilding
       );
-      setSortedFilteredData(sorted);
+      setsortedFilteredData(sorted);
     } else if (currentSortingOption.trim() == "Price Low") {
       const sorted = [...filteredData].sort(
         (a, b) =>
           a.price.split("$")[1].split(",").join("") -
           b.price.split("$")[1].split(",").join("")
       );
-      setSortedFilteredData(sorted);
+      setsortedFilteredData(sorted);
     } else if (currentSortingOption.trim() == "Price High") {
       const sorted = [...filteredData].sort(
         (a, b) =>
           b.price.split("$")[1].split(",").join("") -
           a.price.split("$")[1].split(",").join("")
       );
-      setSortedFilteredData(sorted);
+      setsortedFilteredData(sorted);
     } else {
-      setSortedFilteredData(filteredData);
+      setsortedFilteredData(filteredData);
     }
   }, [filteredData, currentSortingOption]);
   return (

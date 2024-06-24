@@ -78,7 +78,7 @@ const PropertyDataTable = () => {
         </tr>
       </thead>
       <tbody className="t-body">
-        {propertydata?.map((property) => (
+        {propertyData?.map((property) => (
           <tr key={property.id}>
             <th scope="row">
               <div className="listing-style1 dashboard-style d-xxl-flex align-items-center mb-0">

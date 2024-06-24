@@ -26,7 +26,7 @@ const statisticsData = [
 const TopStateBlock = () => {
   return (
     <>
-      {statisticsdata?.map((data, index) => (
+      {statisticsData?.map((data, index) => (
         <div key={index} className="col-sm-6 col-xxl-3">
           <div className="d-flex justify-content-between statistics_funfact">
             <div className="details">

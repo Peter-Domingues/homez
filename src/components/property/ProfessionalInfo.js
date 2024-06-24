@@ -13,7 +13,7 @@ const ProfessionalInfo = () => {
   return (
     <div className="widget-wrapper mb-0">
       <h6 className="title fz17 mb35">Professional Information</h6>
-      {professionalInfodata?.map((info, index) => (
+      {professionalInfoData?.map((info, index) => (
         <div
           key={index}
           className="list-news-style d-flex align-items-center justify-content-between mb10"

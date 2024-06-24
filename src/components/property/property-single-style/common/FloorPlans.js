@@ -34,7 +34,7 @@ const floorPlanData = [
 const FloorPlans = () => {
   return (
     <div className="accordion" id="accordionExample">
-      {floorPlandata?.map((floorPlan, index) => (
+      {floorPlanData?.map((floorPlan, index) => (
         <div
           className={`accordion-item ${index === 1 ? "active" : ""}`}
           key={floorPlan.id}

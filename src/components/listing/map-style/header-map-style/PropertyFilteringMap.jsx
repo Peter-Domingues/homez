@@ -15,7 +15,7 @@ export default function PropertyFilteringMap() {
 
   const [currentSortingOption, setCurrentSortingOption] = useState("Newest");
 
-  const [sortedFilteredData, setSortedFilteredData] = useState([]);
+  const [sortedFilteredData, setsortedFilteredData] = useState([]);
 
   const [pageNumber, setPageNumber] = useState(1);
   const [colstyle, setColstyle] = useState(false);
@@ -24,12 +24,12 @@ export default function PropertyFilteringMap() {
 
   useEffect(() => {
     setPageItems(
-      sortedFiltereddata?.slice((pageNumber - 1) * 9, pageNumber * 9)
+      sortedFilteredData?.slice((pageNumber - 1) * 9, pageNumber * 9)
     );
     setPageContentTrac([
       (pageNumber - 1) * 9 + 1,
       pageNumber * 9,
-      sortedFiltereddata?.length,
+      sortedFilteredData?.length,
     ]);
   }, [pageNumber, sortedFilteredData]);
 
@@ -240,23 +240,23 @@ export default function PropertyFilteringMap() {
       const sorted = [...filteredData].sort(
         (a, b) => a.yearBuilding - b.yearBuilding
       );
-      setSortedFilteredData(sorted);
+      setsortedFilteredData(sorted);
     } else if (currentSortingOption.trim() == "Price Low") {
       const sorted = [...filteredData].sort(
         (a, b) =>
           a.price.split("$")[1].split(",").join("") -
           b.price.split("$")[1].split(",").join("")
       );
-      setSortedFilteredData(sorted);
+      setsortedFilteredData(sorted);
     } else if (currentSortingOption.trim() == "Price High") {
       const sorted = [...filteredData].sort(
         (a, b) =>
           b.price.split("$")[1].split(",").join("") -
           a.price.split("$")[1].split(",").join("")
       );
-      setSortedFilteredData(sorted);
+      setsortedFilteredData(sorted);
     } else {
-      setSortedFilteredData(filteredData);
+      setsortedFilteredData(filteredData);
     }
   }, [filteredData, currentSortingOption]);
   return (

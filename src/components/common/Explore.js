@@ -29,7 +29,7 @@ const Explore = () => {
 
   return (
     <>
-      {iconboxdata?.map((item) => (
+      {iconboxData?.map((item) => (
         <div
           className="col-sm-6 col-lg-4"
           key={item.id}
