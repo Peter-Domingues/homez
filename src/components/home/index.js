@@ -64,13 +64,13 @@ export default function HomeComponent() {
                     className="title"
                     style={{ color: "white", textTransform: "uppercase" }}
                   >
-                    Since day one, I've been dedicated to turning dreams into
-                    reality by creating the ideal setting for your life. Whether
-                    you're looking for a new home for your family, a solid
-                    investment, or the commercial property of your dreams, I'm
-                    here to guide you from buying to renting. Let me shape your
-                    future so you can focus on what truly matters: enjoying life
-                    in the paradise of Miami.
+                    Since day one, I&apos;ve been dedicated to turning dreams
+                    into reality by creating the ideal setting for your life.
+                    Whether you're looking for a new home for your family, a
+                    solid investment, or the commercial property of your dreams,
+                    I&apos;m here to guide you from buying to renting. Let me
+                    shape your future so you can focus on what truly matters:
+                    enjoying life in the paradise of Miami.
                   </p>
                   <p
                     className="title"
