@@ -44,7 +44,7 @@ const Hero = () => {
           spaceBetween={0}
           slidesPerView={1}
           speed={1400} // Set the slide transition speed in milliseconds
-          autoplay={{ delay: 1000, disableOnInteraction: false }}
+          autoplay={{ delay: 0, disableOnInteraction: false }}
           modules={[Thumbs]}
           thumbs={{
             swiper:
