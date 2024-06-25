@@ -86,7 +86,7 @@ export default function HomeComponent() {
                     style={{ alignSelf: "end" }}
                   />
                   <p
-                    className="title"
+                    className="title mt40"
                     style={{ color: "white", textTransform: "uppercase" }}
                   >
                     #NEWHOME#MOVETOMIAMI#TOPAGENT
