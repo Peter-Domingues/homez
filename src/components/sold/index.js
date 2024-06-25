@@ -14,6 +14,9 @@ const Sold = () => {
     {
       Media: "/images/5.png",
     },
+    {
+      Media: "/images/6.png",
+    },
   ];
   return (
     <section className="pb90 pb30-md paddingHorizontal" id="sold">
