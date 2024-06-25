@@ -27,7 +27,7 @@ const OverView = ({ data }) => {
     {
       icon: "flaticon-expand",
       label: "Sqft",
-      value: data?.LotSizeSquareFeet,
+      value: data?.BuildingAreaTotal ?? data?.LotSizeArea,
       xs: true,
     },
     {

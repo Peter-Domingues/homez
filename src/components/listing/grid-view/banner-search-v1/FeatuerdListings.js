@@ -71,7 +71,7 @@ const FeaturedListings = ({ data, colstyle }) => {
                   </a>
                   <a href="#">
                     <span className="flaticon-expand" />{" "}
-                    {listing?.BuildingAreaTotal}
+                    {listing?.BuildingAreaTotal ?? listing?.LotSizeArea}
                   </a>
                 </div>
               </div>

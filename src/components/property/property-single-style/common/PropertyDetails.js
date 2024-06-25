@@ -14,7 +14,7 @@ const PropertyDetails = ({ data }) => {
       },
       {
         label: "Property Size",
-        value: `${data?.LotSizeSquareFeet} Sq Ft`,
+        value: `${data?.BuildingAreaTotal ?? data?.LotSizeArea} Sq Ft`,
       },
       {
         label: "Bathrooms",

@@ -67,19 +67,20 @@ const About = () => {
                     className="title"
                     style={{ color: "white", textTransform: "uppercase" }}
                   >
-                    Pleasure to meet you, my name is Anastasia Benedeti. I’m a
-                    Real Estate Associate & Development in Miami.
+                    Pleasure to meet you, I am Anastasia Benedeti, your real
+                    estate associate in Miami
                   </p>
                   <p
                     className="title"
                     style={{ color: "white", textTransform: "uppercase" }}
                   >
-                    Since day one, passionate about making dreams come through
-                    the ideal setting for your life. Whether it’s a new home for
-                    you or your family, a solid investment, or the commercial
-                    property of your dreams, from buying to renting, I am here
-                    to shape your future and let you focus on what truly
-                    matters: enjoying life in a PARADISE like Miami.
+                    Since day one, I've been dedicated to turning dreams into
+                    reality by creating the ideal setting for your life. Whether
+                    you're looking for a new home for your family, a solid
+                    investment, or the commercial property of your dreams, I'm
+                    here to guide you from buying to renting. Let me shape your
+                    future so you can focus on what truly matters: enjoying life
+                    in the paradise of Miami.
                   </p>
                   <p
                     className="title"
