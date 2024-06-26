@@ -18,13 +18,13 @@ const Hero = () => {
     },
     {
       type: "video",
-      src: "images/page2.mp4",
+      src: "images/page2test.mp4",
       thumb: "/images/page2.png",
       mobile: "/images/page2mobile.mp4",
     },
     {
       type: "video",
-      src: "images/page3.mp4",
+      src: "images/page3test.mp4",
       thumb: "/images/page3.png",
       mobile: "/images/page3mobile.mp4",
     },
