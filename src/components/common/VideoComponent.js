@@ -50,7 +50,8 @@ const VideoComponent = ({ source }) => {
             autoPlay
             muted
             loop
-            playsinline
+            controls=""
+            playsInline
           >
             <source src={source} type="video/mp4" />
             Your browser does not support the video tag.
