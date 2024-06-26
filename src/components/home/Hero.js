@@ -14,19 +14,19 @@ const Hero = () => {
       type: "video",
       src: "images/page4.mp4",
       thumb: "/images/page4.png",
-      mobile: "/images/page4mobile.mp4",
+      mobile: "/images/page4mobiletest.mp4",
     },
     {
       type: "video",
       src: "images/page2test.mp4",
       thumb: "/images/page2.png",
-      mobile: "/images/page2mobile.mp4",
+      mobile: "/images/page2mobiletest.mp4",
     },
     {
       type: "video",
       src: "images/page3test.mp4",
       thumb: "/images/page3.png",
-      mobile: "/images/page3mobile.mp4",
+      mobile: "/images/page3mobiletest.mp4",
     },
     {
       type: "image",
