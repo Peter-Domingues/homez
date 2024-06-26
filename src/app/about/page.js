@@ -99,7 +99,7 @@ const About = () => {
                     className="title mt40"
                     style={{ color: "white", textTransform: "uppercase" }}
                   >
-                    #NEWHOME#MOVETOMIAMI#TOPAGENT
+                    #NEWHOME #MOVETOMIAMI #TOPAGENT
                   </p>
                 </div>
               </div>
