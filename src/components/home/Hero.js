@@ -12,15 +12,15 @@ const Hero = () => {
   const videoSource = [
     {
       type: "video",
-      src: "images/page4.mp4",
-      thumb: "/images/page4.png",
-      mobile: "/images/page4mobiletest.mp4",
-    },
-    {
-      type: "video",
       src: "images/page2test.mp4",
       thumb: "/images/page2.png",
       mobile: "/images/page2mobiletest.mp4",
+    },
+    {
+      type: "video",
+      src: "images/page4.mp4",
+      thumb: "/images/page4.png",
+      mobile: "/images/page4mobiletest.mp4",
     },
     {
       type: "video",
