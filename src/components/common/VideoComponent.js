@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import LazyLoad from "react-lazyload";
 
 const VideoComponent = ({ source }) => {
   const [loaded, setLoaded] = useState(false);
   const [display, setDisplay] = useState("none");
+  const videoRef = useRef(null);
 
   const handleLoad = () => {
     console.log("Video loaded");
@@ -17,11 +18,20 @@ const VideoComponent = ({ source }) => {
     loaded ? setDisplay("block") : setDisplay("none");
   }, [loaded]);
 
+  useEffect(() => {
+    if (videoRef.current && loaded) {
+      videoRef.current.play().catch((error) => {
+        console.log("Error attempting to play video:", error);
+      });
+    }
+  }, [loaded]);
+
   return (
     <div>
       <LazyLoad height={200} once>
         <div style={{ display: display }}>
           <video
+            ref={videoRef}
             preload="metadata"
             onLoadedData={handleLoad}
             width="100%"
