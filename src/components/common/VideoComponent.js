@@ -44,13 +44,13 @@ const VideoComponent = ({ source }) => {
         <div style={{ display: display }}>
           <video
             ref={videoRef}
-            preload="metadata"
             onLoadedData={handleLoad}
             width="100%"
-            autoPlay
+            controls
             muted
+            autoPlay={"autoplay"}
+            preLoad="auto"
             loop
-            controls=""
             playsInline
           >
             <source src={source} type="video/mp4" />
