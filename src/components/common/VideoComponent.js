@@ -26,6 +26,18 @@ const VideoComponent = ({ source }) => {
     }
   }, [loaded]);
 
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.muted = true; // Ensure the video is muted
+      videoRef.current.playsInline = true; // Ensure the video plays inline
+      if (loaded) {
+        videoRef.current.play().catch((error) => {
+          console.log("Error attempting to play video on mobile:", error);
+        });
+      }
+    }
+  }, [loaded]);
+
   return (
     <div>
       <LazyLoad height={200} once>
