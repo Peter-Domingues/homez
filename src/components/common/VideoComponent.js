@@ -47,11 +47,10 @@ const VideoComponent = ({ source }) => {
             onLoadedData={handleLoad}
             width="100%"
             controls
-            muted
-            autoPlay={"autoplay"}
-            preLoad="auto"
-            loop
-            playsInline
+            loop={true}
+            muted={true}
+            autoPlay={true}
+            playsInline={true}
           >
             <source src={source} type="video/mp4" />
             Your browser does not support the video tag.
