@@ -19,21 +19,22 @@ const VideoComponent = ({ source }) => {
 
   return (
     <div>
-      {/* <LazyLoad height={200} once> */}
-      <div style={{ display: display }}>
-        <video
-          preload="metadata"
-          onLoadedData={handleLoad}
-          width="100%"
-          autoPlay
-          muted
-          loop
-        >
-          <source src={source} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      {/* </LazyLoad> */}
+      <LazyLoad height={200} once>
+        <div style={{ display: display }}>
+          <video
+            preload="metadata"
+            onLoadedData={handleLoad}
+            width="100%"
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src={source} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </LazyLoad>
     </div>
   );
 };
