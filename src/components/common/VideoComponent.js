@@ -46,7 +46,6 @@ const VideoComponent = ({ source }) => {
             ref={videoRef}
             onLoadedData={handleLoad}
             width="100%"
-            controls
             loop={true}
             muted={true}
             autoPlay={true}
