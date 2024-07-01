@@ -58,7 +58,7 @@ export default function HomeComponent() {
                     style={{ color: "white", textTransform: "uppercase" }}
                   >
                     Pleasure to meet you, I am Anastasia Benedeti, your real
-                    estate associate in Miami
+                    estate associate in Miami.
                   </p>
                   <p
                     className="title"
