@@ -52,6 +52,7 @@ const fetchInfo = async (page, filters, rentOrSale, statusType, top) => {
 
     filtersSelected.map((filter, index) => {
       let urlFilter;
+
       if (index === 0) {
         urlFilter =
           filter.type === "ListPrice" ||
@@ -62,6 +63,9 @@ const fetchInfo = async (page, filters, rentOrSale, statusType, top) => {
               } lt ${filter.props.max}`
             : filter.type === "PropertySubType"
             ? `&$filter=${filter.type} eq ('${filter.props}')`
+            : filter.type === "BathroomsTotalInteger" ||
+              filter.type === "BedroomsTotal"
+            ? `&$filter=${filter.type} ge '${filter.props}'`
             : `&$filter=${filter.type} eq '${filter.props}'`;
 
         finalUrl = finalUrl + urlFilter;
@@ -74,6 +78,9 @@ const fetchInfo = async (page, filters, rentOrSale, statusType, top) => {
           ? ` and ${filter.type} gt ${filter.props.min} and ${filter.type} lt ${filter.props.max}`
           : filter.type === "PropertySubType"
           ? ` and ${filter.type} ${mapPropertySubTypes(filter.props)}`
+          : filter.type === "BathroomsTotalInteger" ||
+            filter.type === "BedroomsTotal"
+          ? ` and ${filter.type} ge '${filter.props}'`
           : ` and ${filter.type} eq '${filter.props}'`;
 
       finalUrl = finalUrl + urlFilter;
