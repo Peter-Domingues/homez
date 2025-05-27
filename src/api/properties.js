@@ -4,9 +4,8 @@ const getToken = async () => {
   try {
     const clientId = process.env.REACT_APP_REALTY_CLIENT_ID;
     const clientSecret = process.env.REACT_APP_REALTY_CLIENT_SECRET;
-    const authenticationUrl =
-      "https://realtyfeed-sso.auth.us-east-1.amazoncognito.com/oauth2/token";
-    const payload = `grant_type=client_credentials&client_id=${clientId}`;
+    const authenticationUrl = "https://api.realtyfeed.com/v1/auth/token";
+    const payload = `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}`;
 
     const auth = {
       username: clientId,
