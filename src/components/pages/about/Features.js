@@ -1,5 +1,4 @@
 const Features = () => {
-  // Define an array of feature objects
   const features = [
     {
       icon: "flaticon-security",
