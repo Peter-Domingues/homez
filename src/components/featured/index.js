@@ -1,6 +1,5 @@
 "use client";
 import { fetchInfo } from "@/api/properties";
-import FeaturedListings from "@/components/home/FeatuerdListings";
 import { useCallback, useEffect, useState } from "react";
 import ApartmentTypes from "../home/ApartmentTypes";
 
@@ -9,8 +8,6 @@ const Featured = () => {
   const [loading, setLoading] = useState(false);
 
   const getProperties = useCallback(async () => {
-    setLoading(true);
-
     const filterProps = [
       { type: "PropertySubType", props: "SingleFamilyResidence" },
       { type: "City", props: "Miami" },
@@ -52,10 +49,10 @@ const Featured = () => {
           {/* End .row */}
 
           <div className="row" data-aos="fade-up" data-aos-delay="300">
-            <ApartmentTypes data={properties} loading={loading} />
-            {/* <FeaturedListings properties={properties} /> */}
+            {properties && (
+              <ApartmentTypes data={properties} loading={loading} />
+            )}
           </div>
-          {/* End .row */}
         </div>
       </section>
     </>

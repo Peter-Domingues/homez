@@ -1,35 +1,32 @@
 import axios from "axios";
+import { getAccessToken } from "./tokenManager";
 
-const getToken = async () => {
-  try {
-    const clientId = process.env.REACT_APP_REALTY_CLIENT_ID;
-    const clientSecret = process.env.REACT_APP_REALTY_CLIENT_SECRET;
-    const authenticationUrl =
-      "https://realtyfeed-sso.auth.us-east-1.amazoncognito.com/oauth2/token";
-    const payload = `grant_type=client_credentials&client_id=${clientId}`;
+// const getToken = async () => {
+//   try {
+//     const clientId = process.env.REACT_APP_REALTY_CLIENT_ID;
+//     const clientSecret = process.env.REACT_APP_REALTY_CLIENT_SECRET;
+//     const authenticationUrl = "https://api.realtyfeed.com/v1/auth/token";
 
-    const auth = {
-      username: clientId,
-      password: clientSecret,
-    };
+//     const payload = new URLSearchParams();
+//     payload.append("client_id", clientId);
+//     payload.append("client_secret", clientSecret);
 
-    const headers = {
-      "Content-Type": "application/x-www-form-urlencoded",
-    };
+//     const headers = {
+//       "Content-Type": "application/x-www-form-urlencoded",
+//     };
 
-    const response = await axios.post(authenticationUrl, payload, {
-      headers,
-      auth,
-    });
+//     const response = await axios.post(authenticationUrl, payload.toString(), {
+//       headers,
+//     });
 
-    const result = response.data;
-    const accessToken = result.access_token;
+//     const result = response.data;
+//     const accessToken = result.access_token;
 
-    return accessToken;
-  } catch (err) {
-    console.error("Error:", err.message);
-  }
-};
+//     return accessToken;
+//   } catch (err) {
+//     console.error("Error:", err.response?.data || err.message);
+//   }
+// };
 
 const mapPropertySubTypes = (subTypes) => {
   let newArray = [];
@@ -121,7 +118,7 @@ const fetchInfo = async (page, filters, rentOrSale, statusType, top) => {
   const url = `https://api.realtyfeed.com/reso/odata/Property?$top=${
     top ? top : "10"
   }${skip}${filterUrl}${rentOrSaleUrl}${statusUrl}${final}`;
-  const token = await getToken();
+  const token = await getAccessToken();
 
   const response = await fetch(url, {
     headers: {
@@ -137,7 +134,7 @@ const fetchInfo = async (page, filters, rentOrSale, statusType, top) => {
 const fetchPropertieById = async (id) => {
   const xApiKey = process.env.REACT_APP_REALTY_X_API_KEY;
   const url = `https://api.realtyfeed.com/reso/odata/Property?filter=ListingId eq '${id}'`;
-  const token = await getToken();
+  const token = await getAccessToken();
 
   const response = await fetch(url, {
     headers: {
@@ -153,8 +150,8 @@ const fetchPropertieById = async (id) => {
 const fetchPropertieByPriceRange = async (min, max) => {
   const xApiKey = process.env.REACT_APP_REALTY_X_API_KEY;
   const url = `https://api.realtyfeed.com/reso/odata/Property?$filter=ListPrice gt ${min} and ListPrice lt ${max}&$orderby=ListPrice`;
-  const token = await getToken();
-
+  const token = await getAccessToken();
+  console.log(token);
   const response = await fetch(url, {
     headers: {
       accept: "application/json",
@@ -169,7 +166,7 @@ const fetchPropertieByPriceRange = async (min, max) => {
 const fetchMember = async (id) => {
   const xApiKey = process.env.REACT_APP_REALTY_X_API_KEY;
   const url = `https://api.realtyfeed.com/reso/odata/Property?filter=ListAgentMlsId eq '3535815' and StandardStatus eq 'Active'&$orderby=ListPrice desc`;
-  const token = await getToken();
+  const token = await getAccessToken();
 
   const response = await fetch(url, {
     headers: {
@@ -185,7 +182,7 @@ const fetchMember = async (id) => {
 const fetchSold = async (id) => {
   const xApiKey = process.env.REACT_APP_REALTY_X_API_KEY;
   const url = `https://api.realtyfeed.com/reso/odata/Property?filter=ListAgentMlsId eq '3535815' and StandardStatus ne 'Active'&$orderby=ListPrice desc`;
-  const token = await getToken();
+  const token = await getAccessToken();
 
   const response = await fetch(url, {
     headers: {

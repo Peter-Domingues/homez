@@ -12,6 +12,6 @@ module.exports = {
     REACT_APP_REALTY_CLIENT_SECRET: process.env.REACT_APP_REALTY_CLIENT_SECRET,
   },
   images: {
-    domains: ["dx41nk9nsacii.cloudfront.net"],
+    domains: ["dx41nk9nsacii.cloudfront.net", "cdn.realtyfeed.com"],
   },
 };
